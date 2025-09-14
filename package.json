@@ -1,0 +1,26 @@
+{
+  "name": "brainstorm-world-landing",
+  "version": "1.0.0",
+  "description": "Landing page for the Brainstorm project - decentralized web of trust",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "rsync -avz --delete ./ root@your-droplet-ip:/var/www/brainstorm.world/",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "brainstorm",
+    "nostr",
+    "web-of-trust",
+    "decentralized",
+    "landing-page"
+  ],
+  "author": "Pretty Good Freedom Tech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pretty-Good-Freedom-Tech/brainstorm.world.git"
+  },
+  "homepage": "https://www.brainstorm.world"
+}
