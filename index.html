@@ -23,6 +23,14 @@
                     <a href="#how-it-works">How It Works</a>
                     <a href="#get-started">Get Started</a>
                     <a href="https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr" target="_blank">GitHub</a>
+                    <div class="auth-section">
+                        <button id="loginBtn" class="btn btn-primary" style="display: none;">Connect Wallet</button>
+                        <div id="userProfile" class="user-profile" style="display: none;">
+                            <img id="userAvatar" src="images/default-avatar.svg" alt="User Avatar" class="user-avatar">
+                            <span id="userName" class="user-name">User</span>
+                            <button id="logoutBtn" class="btn btn-secondary btn-small">Logout</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -110,13 +118,23 @@
                     <div class="get-started-options">
                         <div class="option-card">
                             <h3>For Users</h3>
-                            <p>Join an existing Brainstorm instance and start building your reputation</p>
+                            <p>Join an existing Brainstorm instance and harness your Grapevine</p>
                             <a href="#" class="btn btn-primary">Find Instances</a>
+                        </div>
+                        <div class="option-card">
+                            <h3>For Brainstorm Owners</h3>
+                            <p>Launch your own Brainstorm instance using our Hosting Service. Manage Grapevines for you and members of your community.</p>
+                            <a href="#" class="btn btn-primary">Launch Instance</a>
                         </div>
                         <div class="option-card">
                             <h3>For Developers</h3>
                             <p>Deploy your own Brainstorm instance or contribute to the project</p>
                             <a href="https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                        </div>
+                        <div class="option-card">
+                            <h3>For Client Devs</h3>
+                            <p>Learn how to incorporate personalized Trust Metrics into your own nostr projects</p>
+                            <a href="#" class="btn btn-primary">Learn more</a>
                         </div>
                     </div>
                 </div>
@@ -154,6 +172,7 @@
         </div>
     </footer>
 
+    <script src="js/nostr-auth.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
