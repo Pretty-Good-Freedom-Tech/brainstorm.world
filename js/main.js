@@ -1,7 +1,22 @@
+// Initialize authentication when both DOM and NostrAuth are ready
+function initializeAuth() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeAuth);
+        return;
+    }
+    
+    if (window.nostrAuth) {
+        initAuthUI();
+    } else {
+        window.addEventListener('nostrAuthReady', initAuthUI);
+    }
+}
+
+// Start initialization
+initializeAuth();
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize authentication UI
-    initAuthUI();
     // Smooth scrolling for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -69,11 +84,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Authentication UI Management
 function initAuthUI() {
+    console.log('Initializing auth UI...');
     const loginBtn = document.getElementById('loginBtn');
     const logoutBtn = document.getElementById('logoutBtn');
     const userProfile = document.getElementById('userProfile');
     const userName = document.getElementById('userName');
     const userAvatar = document.getElementById('userAvatar');
+
+    if (!loginBtn) {
+        console.error('Login button not found in DOM');
+        return;
+    }
+    
+    console.log('Auth UI elements found, setting up event listeners...');
 
     // Show appropriate UI based on login status
     function updateAuthUI() {
@@ -84,8 +107,24 @@ function initAuthUI() {
             
             // Update user display
             userName.textContent = user.display_name || user.name || user.npub || 'Anonymous';
+            
+            // Handle avatar with loading state and fallback
             if (user.picture) {
+                console.log('Loading avatar:', user.picture);
+                userAvatar.classList.add('loading');
                 userAvatar.src = user.picture;
+                userAvatar.onload = function() {
+                    this.classList.remove('loading');
+                };
+                userAvatar.onerror = function() {
+                    console.log('Avatar failed to load, using default');
+                    this.src = 'images/default-avatar.svg';
+                    this.classList.remove('loading');
+                    this.onerror = null; // Prevent infinite loop
+                };
+            } else {
+                userAvatar.src = 'images/default-avatar.svg';
+                userAvatar.classList.remove('loading');
             }
         } else {
             loginBtn.style.display = 'inline-block';
@@ -95,11 +134,19 @@ function initAuthUI() {
 
     // Login button click handler
     loginBtn.addEventListener('click', async function() {
+        console.log('Login button clicked');
         try {
             loginBtn.textContent = 'Connecting...';
             loginBtn.disabled = true;
             
-            await window.nostrAuth.login();
+            const user = await window.nostrAuth.login();
+            
+            // Show initial success message
+            showNotification('Connected! Fetching profile...', 'info');
+            
+            // Update UI immediately with basic info
+            updateAuthUI();
+            
             showNotification('Successfully connected with Nostr!', 'success');
         } catch (error) {
             console.error('Login error:', error);

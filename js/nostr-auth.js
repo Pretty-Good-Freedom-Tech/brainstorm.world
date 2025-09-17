@@ -76,18 +76,28 @@ class NostrAuth {
      * Fetch user profile from Nostr relays
      */
     async fetchUserProfile(pubkey) {
-        // This is a simplified profile fetch
-        // In production, you'd connect to actual Nostr relays
+        console.log('Fetching profile for pubkey:', pubkey);
+        
         try {
-            // For now, return a basic profile structure
+            // Default relays to try
+            const relays = [
+                'wss://relay.damus.io',
+                'wss://nos.lol',
+                'wss://relay.snort.social',
+                'wss://relay.nostr.band'
+            ];
+
+            const profile = await this.fetchProfileFromRelays(pubkey, relays);
+            
             return {
                 pubkey: pubkey,
                 npub: this.hexToNpub(pubkey),
-                name: null,
-                display_name: null,
-                about: null,
-                picture: null,
-                nip05: null
+                name: profile.name || null,
+                display_name: profile.display_name || profile.displayName || null,
+                about: profile.about || null,
+                picture: profile.picture || null,
+                nip05: profile.nip05 || null,
+                banner: profile.banner || null
             };
         } catch (error) {
             console.error('Error fetching profile:', error);
@@ -98,9 +108,86 @@ class NostrAuth {
                 display_name: null,
                 about: null,
                 picture: null,
-                nip05: null
+                nip05: null,
+                banner: null
             };
         }
+    }
+
+    /**
+     * Fetch profile from multiple Nostr relays
+     */
+    async fetchProfileFromRelays(pubkey, relays) {
+        const promises = relays.map(relay => this.fetchProfileFromSingleRelay(pubkey, relay));
+        
+        // Wait for first successful response or all to fail
+        try {
+            const result = await Promise.any(promises);
+            console.log('Profile fetched successfully:', result);
+            return result;
+        } catch (error) {
+            console.warn('Failed to fetch profile from any relay');
+            return {};
+        }
+    }
+
+    /**
+     * Fetch profile from a single Nostr relay
+     */
+    async fetchProfileFromSingleRelay(pubkey, relayUrl) {
+        return new Promise((resolve, reject) => {
+            const ws = new WebSocket(relayUrl);
+            const timeout = setTimeout(() => {
+                ws.close();
+                reject(new Error('Timeout'));
+            }, 5000);
+
+            ws.onopen = () => {
+                // Subscribe to kind 0 events (user metadata) for this pubkey
+                const subscription = {
+                    id: 'profile_' + Math.random().toString(36).substr(2, 9),
+                    kinds: [0],
+                    authors: [pubkey],
+                    limit: 1
+                };
+                
+                ws.send(JSON.stringify(['REQ', subscription.id, subscription]));
+            };
+
+            ws.onmessage = (event) => {
+                try {
+                    const data = JSON.parse(event.data);
+                    
+                    if (data[0] === 'EVENT' && data[2]) {
+                        const profileEvent = data[2];
+                        if (profileEvent.kind === 0) {
+                            const profileData = JSON.parse(profileEvent.content);
+                            clearTimeout(timeout);
+                            ws.close();
+                            resolve(profileData);
+                        }
+                    } else if (data[0] === 'EOSE') {
+                        // End of stored events - no profile found
+                        clearTimeout(timeout);
+                        ws.close();
+                        reject(new Error('No profile found'));
+                    }
+                } catch (error) {
+                    clearTimeout(timeout);
+                    ws.close();
+                    reject(error);
+                }
+            };
+
+            ws.onerror = (error) => {
+                clearTimeout(timeout);
+                reject(error);
+            };
+
+            ws.onclose = () => {
+                clearTimeout(timeout);
+            };
+        });
     }
 
     /**
@@ -225,5 +312,8 @@ class NostrAuth {
     }
 }
 
-// Create global instance
+// Create global instance and dispatch ready event
 window.nostrAuth = new NostrAuth();
+
+// Dispatch custom event when NostrAuth is ready
+window.dispatchEvent(new CustomEvent('nostrAuthReady'));

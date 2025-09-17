@@ -90,6 +90,22 @@ body {
     height: 32px;
     border-radius: 50%;
     border: 2px solid #6366f1;
+    transition: opacity 0.3s ease;
+    background: #f3f4f6;
+}
+
+.user-avatar.loading {
+    opacity: 0.6;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .user-name {
