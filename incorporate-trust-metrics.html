@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorporate Trust Metrics - Brainstorm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Incorporate Trust Metrics</h1>
+                    <p class="hero-subtitle">
+                        Learn how to incorporate Brainstorm trust metrics into your Nostr clients or platforms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <br/>
+
+        <section class="section">
+            <div class="container">                
+                <div class="methods-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    
+                    <!-- Method 1: Trusted Assertions -->
+                    <div class="method-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="method-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <span style="font-size: 24px; color: white;">📋</span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937;">
+                            via Trusted Assertions
+                        </h3>
+                        <p style="color: #6b7280; line-height: 1.6;">
+                            Learn more: 
+                            <a href="https://github.com/vitorpamplona/nips/blob/user-summaries/85.md" target="_blank">NIP-85</a>
+                            <a href="https://github.com/nostr-protocol/nips/pull/1534" target="_blank">pull request</a>
+                        </p>
+                    </div>
+
+                    <!-- Method 2: API -->
+                    <div class="method-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="method-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #047857); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <span style="font-size: 24px; color: white;">🔌</span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937;">via API</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">Talk to <a href="https://njump.me/npub1u5njm6g5h5cpw4wy8xugu62e5s7f6fnysv0sj0z3a8rengt2zqhsxrldq3" target="_blank">straycat</a> if you would like a custom API for you client.</p>
+                    </div>
+
+                    <!-- Method 3: Web of Trust DVM -->
+                    <div class="method-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="method-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <span style="font-size: 24px; color: white;">🕸️</span>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937;">via Web of Trust DVM</h3>
+                        <p style="color: #6b7280; line-height: 1.6;">WoT DVM is not currently implemented, but will be if there is sufficient interest.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-section" style="text-align: center; background: #f9fafb; border-radius: 12px; padding: 2rem; margin-top: 3rem;">
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937;">Need Help Getting Started?</h3>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;">
+                        For technical questions and implementation guidance, contact 
+                        <a href="https://njump.me/npub1u5njm6g5h5cpw4wy8xugu62e5s7f6fnysv0sj0z3a8rengt2zqhsxrldq3" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">straycat</a>.
+                    </p>
+                    <div>
+                        <a href="index.html" class="btn btn-primary">Back to Home</a>
+                        <a href="https://github.com/Pretty-Good-Freedom-Tech/brainstorm" target="_blank" class="btn btn-secondary" style="margin-left: 1rem;">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/nostr-auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

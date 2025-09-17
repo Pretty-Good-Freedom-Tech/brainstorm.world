@@ -70,4 +70,4 @@ Then visit `http://localhost:8000`
 ## Contributing
 
 This is the landing page for the Brainstorm project. The main application code is at:
-https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr
+https://github.com/Pretty-Good-Freedom-Tech/brainstorm

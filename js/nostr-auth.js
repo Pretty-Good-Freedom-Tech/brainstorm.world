@@ -81,6 +81,7 @@ class NostrAuth {
         try {
             // Default relays to try
             const relays = [
+                'wss://wot.brainstorm.social',
                 'wss://relay.damus.io',
                 'wss://nos.lol',
                 'wss://relay.snort.social',

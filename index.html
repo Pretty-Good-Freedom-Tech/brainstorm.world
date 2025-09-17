@@ -11,75 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="images/brainstorm010.svg" alt="Brainstorm" class="logo-icon">
-                    <h1>Brainstorm</h1>
-                </div>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#get-started">Get Started</a>
-                    <a href="https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr" target="_blank">GitHub</a>
-                    <div class="auth-section">
-                        <button id="loginBtn" class="btn btn-primary" style="display: inline-block;">Connect Wallet</button>
-                        <div id="userProfile" class="user-profile" style="display: none;">
-                            <img id="userAvatar" src="images/default-avatar.svg" alt="User Avatar" class="user-avatar">
-                            <span id="userName" class="user-name">User</span>
-                            <button id="logoutBtn" class="btn btn-secondary btn-small">Logout</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="hero">
             <div class="hero-container">
                 <div class="hero-title-container">
-                    <img src="images/brainstorm010.svg" alt="Brainstorm" class="hero-logo">
-                    <h1 class="hero-title">Decentralized Web of Trust</h1>
+                    <h1 class="hero-title">
+                        Brainstorm
+                        <span class="beta-badge" id="betaBadge">LIMITED BETA</span>
+                    </h1>
                 </div>
                 <p class="hero-subtitle">
-                    Build reputation and curate content using the power of social networks on the Nostr protocol
+                    🧠⚡ your personalized nostr Web of Trust provider 🍇
                 </p>
                 <div class="hero-buttons">
                     <a href="#get-started" class="btn btn-primary">Get Started</a>
-                    <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
+                    <a href="incorporate-trust-metrics.html" class="btn btn-primary">Learn More (for devs)</a>
                 </div>
             </div>
         </section>
 
-        <section id="features" class="features">
-            <div class="container">
-                <h2 class="section-title">Why Brainstorm?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🌐</div>
-                        <h3>Decentralized</h3>
-                        <p>Built on the Nostr protocol, ensuring no single point of failure or censorship</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🤝</div>
-                        <h3>Web of Trust</h3>
-                        <p>Leverage your social connections to build reputation and discover quality content</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>Privacy First</h3>
-                        <p>Your data remains under your control with cryptographic key-based identity</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Open Source</h3>
-                        <p>Fully transparent, auditable code that anyone can inspect and contribute to</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="how-it-works" class="how-it-works">
             <div class="container">
@@ -88,22 +40,22 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Connect Your Nostr Identity</h3>
-                            <p>Use your existing Nostr keys or create new ones to establish your identity</p>
+                            <h3>Calculate your Grapevine</h3>
+                            <p>Use a <a href="find-instances.html">Brainstorm instance</a> to calculate your Web of Trust based on nostr Follows, Mutes, and Reports.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Build Your Network</h3>
-                            <p>Follow trusted users and build connections within the decentralized network</p>
+                            <h3>Export your Grapevine</h3>
+                            <p>Trust metrics are communicated as <a href="https://github.com/vitorpamplona/nips/blob/user-summaries/85.md" target="_blank" >Trusted Assertions</a>, via WoT DVM (in development) or accessed via custom API (by request).</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Curate Content</h3>
-                            <p>Discover and share quality content based on your web of trust recommendations</p>
+                            <h3>Use your Grapevine</h3>
+                            <p>Eliminate spam, discover the content you want and take control of your user experience at <a href="participating.html">participating nostr clients</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -114,27 +66,26 @@
             <div class="container">
                 <h2 class="section-title">Get Started</h2>
                 <div class="get-started-content">
-                    <p>Ready to join the decentralized web of trust? Choose your path:</p>
                     <div class="get-started-options">
                         <div class="option-card">
                             <h3>For Users</h3>
-                            <p>Join an existing Brainstorm instance and harness your Grapevine</p>
-                            <a href="#" class="btn btn-primary">Find Instances</a>
+                            <p>Join an existing Brainstorm instance and harness your Grapevine.</p>
+                            <a href="find-instances.html" class="btn btn-primary">Find Instances</a>
                         </div>
                         <div class="option-card">
                             <h3>For Brainstorm Owners</h3>
-                            <p>Launch your own Brainstorm instance using our Hosting Service. Manage Grapevines for you and members of your community.</p>
-                            <a href="#" class="btn btn-primary">Launch Instance</a>
+                            <p>Launch your own Brainstorm instance using our Hosting Service. Manage Grapevines for youself and members of your community!</p>
+                            <a href="#" class="btn btn-primary" id="launchInstanceBtn">Launch Instance</a>
                         </div>
                         <div class="option-card">
                             <h3>For Developers</h3>
-                            <p>Deploy your own Brainstorm instance or contribute to the project</p>
-                            <a href="https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                            <p>Deploy your own Brainstorm instance or contribute to the project.</p>
+                            <a href="https://github.com/Pretty-Good-Freedom-Tech/brainstorm" target="_blank" class="btn btn-secondary">View on GitHub</a>
                         </div>
                         <div class="option-card">
                             <h3>For Client Devs</h3>
-                            <p>Learn how to incorporate personalized Trust Metrics into your own nostr projects</p>
-                            <a href="#" class="btn btn-primary">Learn more</a>
+                            <p>Learn how to incorporate personalized Trust Metrics into your own nostr projects.</p>
+                            <a href="incorporate-trust-metrics.html" class="btn btn-primary">Learn more</a>
                         </div>
                     </div>
                 </div>
@@ -142,36 +93,40 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Brainstorm</h3>
-                    <p>Decentralized web of trust built on Nostr</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="https://github.com/Pretty-Good-Freedom-Tech/hasenpfeffr">GitHub</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">Nostr</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
-                </div>
+    <div id="footer-placeholder"></div>
+
+    <!-- Beta Modal -->
+    <div id="betaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚧 Limited Beta Notice</h2>
+                <span class="close">&times;</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Pretty Good Freedom Tech. Open source under MIT License.</p>
+            <div class="modal-body">
+                <p><strong>Brainstorm is currently in limited beta testing.</strong></p>
+                <p>Interested users should contact <a href="https://njump.me/npub1u5njm6g5h5cpw4wy8xugu62e5s7f6fnysv0sj0z3a8rengt2zqhsxrldq3" target="_blank" class="beta-contact">straycat</a> for access.</p>
             </div>
         </div>
-    </footer>
+    </div>
 
+    <!-- Launch Instance Modal -->
+    <div id="launchInstanceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🚧 Hosting Service Not Yet Available</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p><strong>The Brainstorm Hosting Service is not yet available while Brainstorm is currently undergoing beta testing.</strong></p>
+                <p>For now, developers can deploy their own instances using the open source code.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="https://github.com/Pretty-Good-Freedom-Tech/brainstorm" target="_blank" class="btn btn-secondary">View Source Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
     <script src="js/nostr-auth.js"></script>
     <script src="js/main.js"></script>
 </body>

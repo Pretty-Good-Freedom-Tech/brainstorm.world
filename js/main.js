@@ -1,61 +1,217 @@
-// Initialize authentication when both DOM and NostrAuth are ready
-function initializeAuth() {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeAuth);
-        return;
-    }
+// Modal functions
+function showBetaModal() {
+    const modal = document.getElementById('betaModal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeBetaModal() {
+    const modal = document.getElementById('betaModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Main.js loaded');
     
-    if (window.nostrAuth) {
+    // Wait for header to load before initializing smooth scrolling and beta modal
+    setTimeout(() => {
+        initSmoothScrolling();
+        initializeBetaModal();
+        initializeLaunchInstanceModal();
         initAuthUI();
-    } else {
-        window.addEventListener('nostrAuthReady', initAuthUI);
+    }, 500);
+});
+
+// Beta modal functionality
+function initializeBetaModal() {
+    const betaBadge = document.getElementById('betaBadge');
+    const betaModal = document.getElementById('betaModal');
+    const closeBtn = betaModal?.querySelector('.close');
+
+    if (betaBadge && betaModal) {
+        // Open modal when beta badge is clicked
+        betaBadge.addEventListener('click', function() {
+            betaModal.style.display = 'block';
+        });
+
+        // Close modal when X is clicked
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                betaModal.style.display = 'none';
+            });
+        }
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === betaModal) {
+                betaModal.style.display = 'none';
+            }
+        });
     }
 }
 
-// Start initialization
-initializeAuth();
+// Launch Instance modal functionality
+function initializeLaunchInstanceModal() {
+    const launchInstanceBtn = document.getElementById('launchInstanceBtn');
+    const launchInstanceModal = document.getElementById('launchInstanceModal');
+    const closeBtn = launchInstanceModal?.querySelector('.close');
 
-// Smooth scrolling for navigation links
-document.addEventListener('DOMContentLoaded', function() {
+    if (launchInstanceBtn && launchInstanceModal) {
+        // Open modal when Launch Instance button is clicked
+        launchInstanceBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            launchInstanceModal.style.display = 'block';
+        });
+
+        // Close modal when X is clicked
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                launchInstanceModal.style.display = 'none';
+            });
+        }
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (event.target === launchInstanceModal) {
+                launchInstanceModal.style.display = 'none';
+            }
+        });
+    }
+}
+
+// Initialize components and auth when components are loaded
+document.addEventListener('componentsLoaded', function() {
+    console.log('Components loaded, initializing...');
+    
+    // Initialize smooth scrolling now that header is loaded
+    initSmoothScrolling();
+    
+    // Add a small delay to ensure DOM elements are fully rendered
+    setTimeout(() => {
+        // Wait for NostrAuth to be ready before initializing auth UI
+        if (window.nostrAuth && window.nostrAuth.isReady) {
+            console.log('NostrAuth already ready, initializing auth UI...');
+            initAuthUI();
+        } else {
+            console.log('Waiting for NostrAuth to be ready...');
+            document.addEventListener('nostrAuthReady', function() {
+                console.log('NostrAuth ready event received, initializing auth UI...');
+                initAuthUI();
+            });
+        }
+    }, 100);
+});
+
+function initModalHandlers() {
+    const modal = document.getElementById('betaModal');
+    const closeBtn = modal.querySelector('.close');
+    
+    // Close modal when clicking the X button
+    closeBtn.addEventListener('click', closeBetaModal);
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeBetaModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            closeBetaModal();
+        }
+    });
+    
+    // Add event listener to Launch Instance button
+    const launchBtn = document.querySelector('a.btn.btn-primary');
+    if (launchBtn && launchBtn.textContent.trim() === 'Launch Instance') {
+        launchBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            showBetaModal();
+        });
+    }
+}
+
+// This function is now handled by the componentsLoaded event listener
+// Removed duplicate initialization that was running before header was loaded
+
+// Smooth scrolling function
+function initSmoothScrolling() {
     // Smooth scrolling for anchor links
-    const links = document.querySelectorAll('a[href^="#"]');
+    console.log('Initializing smooth scrolling...');
+    // Select both #anchor and index.html#anchor format links
+    const links = document.querySelectorAll('a[href^="#"], a[href*="#"]');
+    console.log('Found anchor links:', links.length);
+    
+    // Debug: Log all found links
+    links.forEach((link, index) => {
+        console.log(`Link ${index}:`, link.getAttribute('href'), link.textContent.trim());
+    });
     
     links.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
+            console.log('Smooth scrolling clicked: ' + href);
             
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            // Only handle links that contain hash fragments and are on the same page
+            if (!href.includes('#')) return;
             
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+            // Extract the hash part (everything after #)
+            const hashIndex = href.indexOf('#');
+            const targetId = href.substring(hashIndex);
+            
+            // Skip if hash is empty or just '#'
+            if (targetId === '#' || targetId === '') {
+                console.log('Skipping empty hash link:', href);
+                return;
+            }
+            
+            // Check if this is a same-page link (no domain/path before # or starts with current page)
+            const beforeHash = href.substring(0, hashIndex);
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            
+            if (beforeHash === '' || beforeHash === currentPage || beforeHash === 'index.html') {
+                console.log('Processing same-page anchor link:', targetId);
+                e.preventDefault();
                 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
     
     // Add scroll effect to header
     const header = document.querySelector('.header');
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (header) {
+        let lastScrollTop = 0;
         
-        if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = 'none';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
     
     // Add animation on scroll for feature cards
     const observerOptions = {
@@ -80,19 +236,38 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-});
+}
 
 // Authentication UI Management
 function initAuthUI() {
     console.log('Initializing auth UI...');
+    
+    // Debug: Check if header is loaded
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    console.log('Header placeholder found:', !!headerPlaceholder);
+    console.log('Header placeholder content:', headerPlaceholder ? headerPlaceholder.innerHTML.length : 'N/A');
+    
     const loginBtn = document.getElementById('loginBtn');
     const logoutBtn = document.getElementById('logoutBtn');
     const userProfile = document.getElementById('userProfile');
     const userName = document.getElementById('userName');
     const userAvatar = document.getElementById('userAvatar');
 
+    console.log('Auth elements found:', {
+        loginBtn: !!loginBtn,
+        logoutBtn: !!logoutBtn,
+        userProfile: !!userProfile,
+        userName: !!userName,
+        userAvatar: !!userAvatar
+    });
+
     if (!loginBtn) {
-        console.error('Login button not found in DOM');
+        console.error('Login button not found in DOM - header may not be loaded yet');
+        // Retry after a longer delay
+        setTimeout(() => {
+            console.log('Retrying auth UI initialization...');
+            initAuthUI();
+        }, 500);
         return;
     }
     

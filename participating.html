@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participating Clients & Services - Brainstorm</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Participating Clients & Services</h1>
+                    <p class="hero-subtitle">
+                        Nostr clients and services that have incorporated Brainstorm trust scores.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <br />
+
+        <section class="section">
+            <div class="container">
+                <div class="participants-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    
+                    <!-- Relay Tools -->
+                    <div class="participant-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="participant-header" style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #1f2937;">Relay Tools</h3>
+                                <span class="status-badge active" style="display: inline-block; padding: 0.25rem 0.75rem; background: #10b981; color: white; border-radius: 20px; font-size: 0.875rem; font-weight: 500;">Active</span>
+                            </div>
+                        </div>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Protect your relay from spam with a personalized whitelist.
+                        </p>
+                        <div class="integration-method" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <span style="font-size: 0.875rem; font-weight: 500; color: #374151;">Integration Method:</span>
+                            <span style="font-size: 0.875rem; color: #6b7280; margin-left: 0.5rem;">Custom API</span>
+                        </div>
+                        <a href="https://relay.tools" target="_blank" class="btn btn-primary" style="width: 100%; text-align: center;">Visit Relay Tools</a>
+                    </div>
+
+                    <!-- Catallax -->
+                    <div class="participant-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="participant-header" style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #1f2937;">Catallax</h3>
+                                <span class="status-badge development" style="display: inline-block; padding: 0.25rem 0.75rem; background: #f59e0b; color: white; border-radius: 20px; font-size: 0.875rem; font-weight: 500;">In Development</span>
+                            </div>
+                        </div>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Find trustworthy arbiters vetted by your Grapevine. 
+                        </p>
+                        <div class="integration-method" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <span style="font-size: 0.875rem; font-weight: 500; color: #374151;">Integration Method:</span>
+                            <span style="font-size: 0.875rem; color: #6b7280; margin-left: 0.5rem;">Trusted Assertions</span>
+                        </div>
+                        <a href="https://catallax.network" target="_blank" class="btn btn-secondary" style="width: 100%; text-align: center;">Visit Catallax</a>
+                    </div>
+
+                    <!-- Nym Rank -->
+                    <div class="participant-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                        <div class="participant-header" style="display: flex; justify-content: between; align-items: flex-start; margin-bottom: 1.5rem;">
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #1f2937;">Nym Rank</h3>
+                                <span class="status-badge development" style="display: inline-block; padding: 0.25rem 0.75rem; background: #f59e0b; color: white; border-radius: 20px; font-size: 0.875rem; font-weight: 500;">In Development</span>
+                            </div>
+                        </div>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Remove impersonators and other bad actors from keyword profile search using personalized trust metrics.
+                        </p>
+                        <div class="integration-method" style="background: #f3f4f6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                            <span style="font-size: 0.875rem; font-weight: 500; color: #374151;">Integration Method:</span>
+                            <span style="font-size: 0.875rem; color: #6b7280; margin-left: 0.5rem;">Trusted Assertions</span>
+                        </div>
+                        <a href="https://nymrank.dev/" target="_blank" class="btn btn-secondary" style="width: 100%; text-align: center;">Visit Nym Rank</a>
+                    </div>
+                </div>
+
+                <!-- Developer CTA Section -->
+                <div class="developer-cta" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; padding: 3rem 2rem; margin-top: 3rem;">
+                    <h3 style="font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem;">Want to Add Your Client or Service?</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+                        Learn how to incorporate Brainstorm trust metrics into your Nostr client or service and join this growing ecosystem.
+                    </p>
+                    <a href="../incorporate-trust-metrics.html" class="btn" style="background: white; color: #667eea; font-weight: 600; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease;">
+                        Learn How to Integrate
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/nostr-auth.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
