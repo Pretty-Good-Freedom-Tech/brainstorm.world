@@ -26,7 +26,7 @@ _Challenge_: to calculate and update trust metrics in a performant manner
 
 _Progress_: [Brainstorm](https://github.com/Pretty-Good-Freedom-Tech/brainstorm), the current product, calculates personalized web of trust (WoT) metrics for multiple users including PageRank, GrapeRank, hops, verified follower count, etc. Full updates take about half an hour per customer. Currently running on AWS ubuntu with 32GB of RAM and 8 cores. Uses the [Neo4j Graph Data Science library](https://neo4j.com/docs/graph-data-science/current/) for PageRank calculations.
 
-### Phase 3: content graph
+### Phase 3: organization of nostr content as a knowledge graph
 
 - additional nodes: NostrEvent
 - additional relationships: AUTHORED, many others
