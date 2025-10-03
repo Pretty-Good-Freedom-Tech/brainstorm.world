@@ -1,9 +1,9 @@
 Brainstorm product monetization
 =====
 
-# Models for monetization
+## Models for monetization
 
-## Subscription model
+### Subscription model
 
 inspired by [nostr.build](https://nostr.build)
 
@@ -18,13 +18,13 @@ Paid tiers:
 - more frequent updates
 - more methods to deliver metrics to nostr clients and platforms
 
-## Hosting model
+### Hosting model
 
 inspired by [Relay Tools](https://relay.tools)
 
 customers: power users who want to run their own Brainstorm instance and calculate trust metrics for friends, families, or customers
 
-# Open questions impacting monetization strategy and product design
+## Open questions impacting monetization strategy and product design
 
 - What are the minimum system requirements and anticipated monthly cost for a Brainstorm instance? Assume support for real time basic social graph synchronization and trust metric calculations. 2 million NostrUser nodes (currently only about 250 thousand connected), 25 million relationships, 1-10 updates per minute?
 - How many customers can a single Brainstorm instance support? Each customer requires one NostrUserWotMetricsCard node per connected NostrUser node (currently about 250 thousand).
