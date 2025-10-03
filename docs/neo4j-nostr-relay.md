@@ -5,9 +5,9 @@ a nostr relay paired with Neo4j Community Edition
 
 *Goal*: publication of an open source ETL pipeline to synchronize [Neo4j Community Edition](https://neo4j.com/product/community-edition/) with a local nostr relay such as the battle-tested [strfry](https://github.com/hoytech/strfry) (LMDB) or the customizable [khatru](https://github.com/fiatjaf/khatru) (SQL or LMDB)
 
-*Background*: [Nostr](https://nostr.com/) is a decentralized social networking protocol with 10 to 20 thousand [active daily users](https://stats.nostr.band/). Content repositories, known as relays, are open source, with most implementations based on SQL or LMDB. Surprisingly, there are currently no graph database implementations of nostr relays other than our own [initial attempts](https://github.com/Pretty-Good-Freedom-Tech/brainstorm). We believe nostr is the best foundation upon which to build truly decentralized social networking communities. Its primary deficiency is a mature, sophisticated system for personalized reputation and recommendations. Building such a system requires integration of a performant, scalable, open source graph database into the nostr tech stack.
+*Background*: [Nostr](https://nostr.com/) is a decentralized social networking protocol with 10 to 20 thousand [active daily users](https://stats.nostr.band/). Content repositories, known as [relays](https://github.com/aljazceru/awesome-nostr#relays), are open source, with most implementations based on SQL or LMDB. Surprisingly, there are currently no graph database implementations of nostr relays other than our own [exploratory attempts](https://github.com/Pretty-Good-Freedom-Tech/brainstorm). Expansion of the nostr userbase requires integration of a performant, scalable, open source graph database into the nostr tech stack.
 
-*Monetization*: The open source neo4j nostr relay will form the backbone of the [Brainstorm](https://brainstorm.world), a service that will track personalized trust metrics for users of the nostr protocol.
+*Use case*: The open source neo4j nostr relay will form the backbone of the [Brainstorm](https://brainstorm.world), a service that will track personalized trust metrics for users of the nostr protocol.
 
 ### Phase 1: basic social graph
 
