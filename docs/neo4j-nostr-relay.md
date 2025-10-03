@@ -13,7 +13,7 @@ a nostr relay paired with Neo4j Community Edition
 
 Keep track of the nostr social graph with nodes: NostrUser and relationships: FOLLOWS, MUTES, REPORTS.
 
-_Challenge_: to maintain real-time synchronization. follow/unfollow, mute/unmute, or report updates should be reflected in the graph database within a reasonable amount of time, on the order of seconds to minutes. Given the existing nostr userbase, experience tells us to expect approximately 1 - 10 graph updates per minute. Current graph contains ~ 2 million NostrUser nodes and ~ 25 million relationships.
+The challenge will be to maintain real-time synchronization. follow/unfollow, mute/unmute, or report updates should be reflected in the graph database within a reasonable amount of time, on the order of seconds to minutes. Given the existing nostr userbase, there are approximately 1 - 10 graph updates per minute. Current graph contains ~ 2 million NostrUser nodes and ~ 25 million relationships.
 
 _Progress_: Our test implementation, [Brainstorm](https://straycat.brainstorm.social), synchronizes Neo4j with a local [strfry relay](https://github.com/hoytech/strfry) but does not maintain real time synchronization. Reconciliation runs once per day and takes hours to complete. Uses the [APOC plugin](https://neo4j.com/labs/apoc/).
 
@@ -25,9 +25,8 @@ _Progress_: [Brainstorm](https://github.com/Pretty-Good-Freedom-Tech/brainstorm)
 
 ### Phase 3: organization of nostr content as a knowledge graph
 
-- additional nodes: NostrEvent
-- additional relationships: AUTHORED, many others
+Add content gradually and incorporate it using new neo4j nodes, including NostrEvent, and new relationships, including AUTHORED. Content will be filtered using trust metrics and organized into a knowledge graph.
 
-_Challenge_: high volume of NostrEvent nodes, with [current stats](https://stats.nostr.band/) showing approximately half a million new notes per day, 600 million accumulated notes for all time.
+The challenge will be the high volume of data, with [current stats](https://stats.nostr.band/) showing approximately half a million new nostr notes per day, 600 million accumulated notes for all time.
 
 _Progress_: not yet attempted
