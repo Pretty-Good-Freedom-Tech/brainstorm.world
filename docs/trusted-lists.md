@@ -7,7 +7,7 @@ A cross between Trusted Assertions and NIP-51.
 
 We create only one new event kind: 30385 for the Trusted List. We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Providers.
 
-The Trusted List event follows the format of a NIP-51 list, with the addition of an optional item in `p`, `e`, `t`, and `a` tags that represents the score. The `d` tag should provide a full specification of the trust metric, and is 
+The Trusted List event follows the format of a NIP-51 list, with the addition of an optional item in `p`, `e`, `t`, and `a` tags that represents the relevant trust metric. The `d` tag could be human readable and match the Trusted List title, or it could be an event id pointing to an event that provides details about the nature of the Trusted List, including the range and interpretation of the trust metric.
 
 #### Example
 
