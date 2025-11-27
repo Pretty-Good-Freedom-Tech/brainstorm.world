@@ -5,7 +5,7 @@ Trusted Lists
 
 A cross between Trusted Assertions and NIP-51.
 
-We create two new event kinds: 30385 for the Trusted List. We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Proivders.
+We create only one new event kind: 30385 for the Trusted List. We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Proivders.
 
 #### Example
 
