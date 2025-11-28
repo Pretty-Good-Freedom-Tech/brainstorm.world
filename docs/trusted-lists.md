@@ -5,7 +5,11 @@ Trusted Lists
 
 A cross between Trusted Assertions and NIP-51.
 
-We create only one new event kind: 30385 for the Trusted List. We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Providers. The Trusted List event follows the format of a NIP-51 list, with the addition of an optional item in `p`, `e`, `t`, and `a` tags that represents the relevant trust metric.
+This NIP defines a standard for Web of Trust Service Providers to export lists of pubkeys, events, or strings ranked by trust metric.
+
+We create only one new event kind: 30385 for the Trusted List. The Trusted List event follows the format of a NIP-51 list, with the addition of an optional element in tags to indicate that list item's trust metric. 
+
+We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Providers.
 
 ## Trusted Lists
 
@@ -14,6 +18,8 @@ We create only one new event kind: 30385 for the Trusted List. We will reuse kin
 The _context_ of the Trusted List is indicated by the `d` tag. The `d` tag is a string that could be human readable (perhaps similar to the title) or could be non-human-readable such as an event id pointing to an event that provides details about the context, including the range and interpretation of the trust metric. The `d` tags of kine 30385 events should correspond exactly to the strings found in the kind 10040 events (below) (just after "30385:").
 
 Unlike Trusted Assertions, which defines supported tags such as `rank` and `followers`, we do not specify a set of supported trust contexts; any string is allowed.
+
+The items in the list are assumed to be ordered according to the trust metric, even if the optional trust metric of each item is not provided. The direction of ordering (ascending vs descending) will depend upon the _context_.
 
 ### Optional Trust Metric
 
@@ -38,7 +44,7 @@ Trending 24 Hour Content
 {
   "id": "<id>",
   "pubkey": "<pubkey_wot_sp1>",
-  "created_at": 1695327657,
+  "created_at": <timestamp>,
   "kind": 30385,
   "content": "",
   "tags": [
@@ -59,7 +65,7 @@ Top Bluegrass Musicians
 {
   "id": "<id>",
   "pubkey": "<pubkey_wot_sp2>",
-  "created_at": 1695327657,
+  "created_at": <timestamp>,
   "kind": 30385,
   "content": "",
   "tags": [
@@ -74,22 +80,22 @@ Top Bluegrass Musicians
 }
 ```
 
-Top Movies
+Top Hashtags
 
 ```json
 {
   "id": "<id>",
   "pubkey": "<pubkey_wot_sp3>",
-  "created_at": 1695327657,
+  "created_at": <timestamp>,
   "kind": 30385,
   "content": "",
   "tags": [
-    ["d", "Best-Movies-of-All-Time"],
-    ["title", "Best Movies of All Time"],
+    ["d", "top-hashtags"],
+    ["title", "Top Hashtags"],
     ["metric", "rank"],
-    ["t", "The Godfather", "100"],
-    ["t", "The Godfather Part II", "99"],
-    ["t", "The Shawshank Redemption", "", "96"]
+    ["t", "wotathon", "100"],
+    ["t", "100pushups, "99"],
+    ["t", "asknostr", "", "96"]
   ]
 }
 ```
@@ -100,7 +106,7 @@ Top pubkeys by `rank`
 {
   "id": "<id>",
   "pubkey": "<pubkey_wot_sp4>",
-  "created_at": 1695327657,
+  "created_at": <timestamp>,
   "kind": 30385,
   "content": "",
   "tags": [
