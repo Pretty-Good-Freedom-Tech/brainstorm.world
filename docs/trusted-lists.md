@@ -7,11 +7,9 @@ A cross between Trusted Assertions and NIP-51.
 
 This NIP defines a standard for Web of Trust Service Providers to export lists of pubkeys, events, or strings ranked by trust metric.
 
-We create only one new event kind: 30385 for the Trusted List. The Trusted List event follows the format of a NIP-51 list, with the addition of an optional element in tags to indicate that list item's trust metric. 
-
-We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Providers.
-
 ## Trusted Lists
+
+We create only one new event kind: 30385 for the Trusted List. The Trusted List event follows the format of a NIP-51 list, with the addition of an optional element in `p`, `e`, `a`, and `t` tags to indicate that list item's trust metric. 
 
 ### Trust Context
 
@@ -122,6 +120,8 @@ Top pubkeys by `rank`
 ```
 
 ## Declaring Trusted Lists Service Provider Preferences
+
+We will reuse kind 10040 from the Trusted Assertions NIP to declare Trusted Lists Service Providers.
 
 Kind 10040 events will be used to record user preferences not only for Trusted Assertions Service Providers, but also for Trusted List Service Providers. For each Trusted List, the SP preference will be indicated with the tag: `["30385:<trusted-list-d-tag>", "<wot_sp_pubkey>", "<relay>"]`.
 
