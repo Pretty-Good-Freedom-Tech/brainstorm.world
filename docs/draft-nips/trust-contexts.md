@@ -11,26 +11,26 @@ Examples of Trust Categories are: movies, dramas, comedies. Examples of Trust Ac
 
 We will use Curated Lists to maintain a list of Actions and a list of Categories.
 
-## Declaration of Actions:
+## Declaration of Action and Category lists:
+
+We declare the lists of actions and categories using kind 9998 events, as per the Curated Lists NIP:
 
 ```
 {
   "kind": 9998,
   "tags": [
     ["names", "action", "actions"],
-    ["description", "This list of actions is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being dategories."]
+    ["description", "This list of actions is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being categories."]
   ]
 }
 ```
 
-## Declaration of Categories:
-
 ```
 {
   "kind": 9998,
   "tags": [
-    ["names", "action", "actions"],
-    ["description", "This list of actions is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being dategories."]
+    ["names", "category", "categories"],
+    ["description", "This list of categories is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being actions."]
   ]
 }
 ```
@@ -39,3 +39,65 @@ We will use Curated Lists to maintain a list of Actions and a list of Categories
 
 It will be important to maintain hierarchical relationships for Actions and Categories. For example, we will want to make use of the fact that dramas is a subset of movies. Therefore, if our web of trust tells us that Charlie is highly skilled at revieweing movies, we will be able to assume that this skill applies to all subsets of movies, including dramas and comedies.
 
+(section incomplete; need to discuss how to do this. Maybe make a list of relationships, with one relationship called subset; make a list of category relationships; and users can declare dramas as a subset of movies by adding an item to the list of category relationships.)
+
+We first create a list of relationship types:
+
+```
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "relationship type", "relationship types"],
+    ["description", "lorem ipsum"],
+    ["required", "direction"] // directions: forward, reverse, bidirectional, none; specify these details in the description
+  ],
+  "id": <id_for_list_of_relationship_types>
+}
+```
+
+Then we create a relationship type called subset:
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationship_types>],
+    ["name", "subset"],
+    ["description", "lorem ipsum"],
+    ["direction", "forward"],
+    ["required", "nodeFrom"],
+    ["required", "nodeTo"]
+  ]
+}
+```
+
+Create the list of relationships:
+
+```
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "relationship", "relationships"],
+    ["description", "lorem ipsum"],
+    ["required", "nodeFrom"],
+    ["required", "relationship_type"],
+    ["required", "nodeTo"]
+  ],
+  "id": <id_for_list_of_relationships>
+}
+```
+
+Finally, here's how we add that dramas is a subset of movies:
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationships>],
+    ["relationship_type", <id_for_subset>],
+    ["description", "lorem ipsum"],
+    ["nodeFrom", <id_for_dramas>],
+    ["nodeTo", <id_for_movies>]
+  ]
+}
+```
