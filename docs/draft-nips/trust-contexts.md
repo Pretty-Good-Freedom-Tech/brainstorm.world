@@ -90,7 +90,7 @@ We first create a list of relationship types:
 }
 ```
 
-Then we create a relationship type called subset:
+Then we create a relationship type called _subset_:
 
 ```
 {
@@ -102,7 +102,8 @@ Then we create a relationship type called subset:
     ["direction", "forward"],
     ["required", "nodeFrom"],
     ["required", "nodeTo"]
-  ]
+  ],
+  "id": <id_for_subset>
 }
 ```
 
