@@ -137,3 +137,7 @@ Finally, here's how we add that dramas is a subset of movies:
   ]
 }
 ```
+
+# Utilization
+
+(to be completed. Create a way for Alice to rate Bob along a given context. We will need to create a new list called attestations or ratings or something like that, with fields: rater, ratee, rating, context. Probably also a field for ratingType, which specifies whether rating is binary, 0-5 star, etc.)
