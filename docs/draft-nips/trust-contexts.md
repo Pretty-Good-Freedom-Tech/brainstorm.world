@@ -21,7 +21,8 @@ We declare the lists of actions and categories using kind 9998 events, as per th
   "tags": [
     ["names", "action", "actions"],
     ["description", "This list of actions is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being categories."]
-  ]
+  ],
+  "id": <id_for_list_of_actions>
 }
 ```
 
@@ -31,9 +32,43 @@ We declare the lists of actions and categories using kind 9998 events, as per th
   "tags": [
     ["names", "category", "categories"],
     ["description", "This list of categories is intended to be used as one of two components in Trust Contexts, as per NIP-xx, the other component being actions."]
-  ]
+  ],
+  "id": <id_for_list_of_categories>
 }
 ```
+
+## Declaring specific Actions and Categories
+
+Declare _to direct_ as an item on the list of actions:
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_actions>],
+    ["name", "to direct"],
+    ["description", "lorem ipsum"]
+  ],
+  "id": <id_for_action_to_direct>
+}
+```
+Do likewise for other actions: _to write_, _to review_, etc.
+
+Declare _movies_ as an item on the list of categories:
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_categories>],
+    ["name", "movies"],
+    ["description", "lorem ipsum"]
+  ],
+  "id": <id_for_category_movies>
+}
+```
+
+Do likewise for other categories: _comedies_, _dramas_, etc.
 
 # Organization of Actions and Categories into graphs
 
