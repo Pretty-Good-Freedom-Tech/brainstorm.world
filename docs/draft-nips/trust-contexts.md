@@ -3,9 +3,9 @@ Trust Contexts
 
 This NIP proposes a simple, powerful and versatile method to categorize trust contexts using two fields: the _action_ field and the _category_ field. 
 
-Each Trust Context is composed of one Trust Category and one Trust Context.
+Each Trust Context is composed of one _action_ and one _category_.
 
-Examples of Trust Categories are: movies, dramas, comedies. Examples of Trust Actions are: to review, to write, to direct. Using different combinations of actions and categories, we are able to convey, for example, that we trust Alice to direct comedies, Bob to write science fiction, and Charlie to review movies.
+Examples of _actions_ are: to review, to write, to direct. Examples of _categories_ are: movies, dramas, comedies. Using different combinations of actions and categories, we are able to convey, for example, that we trust Alice to direct comedies, Bob to write science fiction, and Charlie to review movies.
 
 # Curation of Actions and Categories
 
