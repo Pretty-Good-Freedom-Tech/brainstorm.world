@@ -70,7 +70,7 @@ Declare _movies_ as an item on the list of categories:
 
 Do likewise for other categories: _comedies_, _dramas_, etc.
 
-# Organization of Actions and Categories into graphs
+# Organization of Actions and Categories into hierarchies
 
 It will be important to maintain hierarchical relationships for Actions and Categories. For example, we will want to make use of the fact that dramas is a subset of movies. Therefore, if our web of trust tells us that Charlie is highly skilled at revieweing movies, we will be able to assume that this skill applies to all subsets of movies, including dramas and comedies.
 
