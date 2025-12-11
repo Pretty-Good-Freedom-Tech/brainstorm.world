@@ -1,7 +1,7 @@
 Curated Ratings
 =====
 
-This NIP uses the [Curated Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) to establish a simple, flexible, and powerful method to create _ratings_.
+This NIP uses the [Curated Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) to establish a simple, flexible, and powerful method to create _ratings_ that are organized into _rating_types_.
 
 # Declaration of the Lists: Ratings and Rating Types
 
