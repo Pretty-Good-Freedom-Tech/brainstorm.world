@@ -1,9 +1,9 @@
 Curated Contexts
 =====
 
-This NIP proposes a simple, powerful and versatile method to categorize trust contexts using two fields: the _action_ field and the _category_ field. 
+This NIP proposes a simple, powerful and versatile method to categorize contexts using two fields: the _action_ field and the _category_ field. 
 
-Each Trust Context is composed of one _action_ and one _category_.
+Each individual Context is composed of one _action_ and one _category_. 
 
 Examples of _actions_ are: to review, to write, to direct. Examples of _categories_ are: movies, dramas, comedies. Using different combinations of actions and categories, we are able to convey, for example, that we trust Alice to direct comedies, Bob to write science fiction, and Charlie to review movies.
 
