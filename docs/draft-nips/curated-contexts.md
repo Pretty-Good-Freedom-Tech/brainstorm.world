@@ -1,4 +1,4 @@
-Curated Trust Contexts
+Curated Contexts
 =====
 
 This NIP proposes a simple, powerful and versatile method to categorize trust contexts using two fields: the _action_ field and the _category_ field. 
