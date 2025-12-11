@@ -9,7 +9,9 @@ We will suggest three rating types: 5 star, 0-100, and pairwise comparision, and
 
 # Declaration of the lists of Ratings and Rating Types
 
-We declare the list of ratings using kind 9998 events, as per the Curated Lists NIP:
+### Declation of the list of Ratings
+
+We declare the list of ratings using a kind 9998 event, as per the Curated Lists NIP:
 
 ```
 {
@@ -17,7 +19,8 @@ We declare the list of ratings using kind 9998 events, as per the Curated Lists 
   "tags": [
     ["names", "rating", "ratings"],
     ["description", "lorem ipsum"],
-    ["required","ratingType"]
+    ["required","ratingType"],
+    ["optional","context"]
   ],
   "id": <id_for_list_of_ratings>
 }
@@ -25,7 +28,11 @@ We declare the list of ratings using kind 9998 events, as per the Curated Lists 
 
 Note the only universally required tag is the ratingType. As demonstrated below, declaration of a ratingType will typically specify additional tags (required, optional, etc). These details _should_ be made clear in the description.
 
-We declare the list of rating types using kind 9998 events, as per the Curated Lists NIP:
+Note also that the context tag is optional. It may use the action:category method or the plain context method, as discussed in the Curated Contexts NIP.
+
+### Declaration of the list of Rating Types
+
+We declare the list of rating types using a kind 9998 event, as per the Curated Lists NIP:
 
 ```
 {
@@ -39,9 +46,9 @@ We declare the list of rating types using kind 9998 events, as per the Curated L
 }
 ```
 
-# Examples
+# Declaration of Rating Types: 5-star, 0-100, or pairwise comparison
 
-## Create Rating Types: 5-star, 0-100, or pairwise comparison
+### 5-star
 
 ```
 {
@@ -49,11 +56,27 @@ We declare the list of rating types using kind 9998 events, as per the Curated L
   "tags": [
     ["z", <id_for_list_of_rating_types>],
     ["name", "5 star"],
-    ["description", "For ratings in the category of 5-stars, the rating must be an integer between 0 and 5. Context is optional; if unspecified, context is intended to be something generic."]
+    ["description", "For ratings in the category of 5-stars, the rating must be an integer between 0 and 5. Context is optional. It may use the action:category method or the plain context method."]
   ],
   "id": <id_for_list_of_5star_ratings>
 }
 ```
+
+### 0-100
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_rating_types>],
+    ["name", "0-100"],
+    ["description", "For ratings in the category of 0-100, the rating must be an integer between 0 and 100. Context is optional. It may use the action:category method or the plain context method."]
+  ],
+  "id": <id_for_list_of_0_to_100_ratings>
+}
+```
+
+### Pairwise Comparison
 
 ```
 {
@@ -61,13 +84,15 @@ We declare the list of rating types using kind 9998 events, as per the Curated L
   "tags": [
     ["z", <id_for_list_of_rating_types>],
     ["name", "pairwise comparison"],
-    ["description", "For ratings in the category of pairwise comparison, there are two subjects; the rating is > or =."]
+    ["description", "For ratings in the category of pairwise comparison, there are two subjects; the rating is > or =. Context is optional. It may use the action:category method or the plain context method."]
   ],
   "id": <id_for_list_of_pairwise_comparison_ratings>
 }
 ```
 
-Now rate Alice as a better back end programmer than Bob
+# Examples of individual Ratings
+
+Rate Alice as a better back end programmer than Bob using the _pairwise comparison_ rating type.
 
 ```
 {
