@@ -140,4 +140,12 @@ Finally, here's how we add that dramas is a subset of movies:
 
 # Utilization
 
-(to be completed. Create a way for Alice to rate Bob along a given context. We will need to create a new list called attestations or ratings or something like that, with fields: rater, ratee, rating, context. Probably also a field for ratingType, which specifies whether rating is binary, 0-5 star, etc.)
+Contexts play a central role in the Curated Ratings NIP.
+
+Categories can be used to classify almost anything: products, services, businesses, people, ideas, etc. 
+
+# Declarations of the list of Contexts and list of Context Types
+
+We declare the lists of actions and categories using kind 9998 events, as per the Curated Lists NIP:
+
+A single-field context 
