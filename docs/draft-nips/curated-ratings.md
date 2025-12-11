@@ -3,7 +3,9 @@ Curated Ratings
 
 This NIP uses the [Curated Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) to establish a simple, flexible, and powerful method to create _ratings_ that are organized into _rating_types_.
 
-# Declaration of the Lists: Ratings and Rating Types
+We will suggest three rating types: 5 star, 0-100, and pairwise comparision, and will show an example rating for each of these types.
+
+# Declaration of the lists of Ratings and Rating Types
 
 We declare the list of ratings using kind 9998 events, as per the Curated Lists NIP:
 
@@ -13,14 +15,15 @@ We declare the list of ratings using kind 9998 events, as per the Curated Lists 
   "tags": [
     ["names", "rating", "ratings"],
     ["description", "lorem ipsum"],
-    ["optional","context"],
-    ["required","ratingType"],
-    ["required","subject"],
-    ["required","rating"]
+    ["required","ratingType"]
   ],
   "id": <id_for_list_of_ratings>
 }
 ```
+
+Note the only universally required tag is the ratingType. As demonstrated below, declaration of a ratingType will typically specify additional tags (required, optional, etc). These details will be in the description.
+
+We declare the list of rating types using kind 9998 events, as per the Curated Lists NIP:
 
 ```
 {
