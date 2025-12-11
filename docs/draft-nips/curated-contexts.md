@@ -148,4 +148,4 @@ Categories can be used to classify almost anything: products, services, business
 
 We declare the lists of actions and categories using kind 9998 events, as per the Curated Lists NIP:
 
-A single-field context 
+(work in progress, NIP incomplete)
