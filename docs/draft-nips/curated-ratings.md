@@ -36,7 +36,7 @@ We declare the list of ratings using kind 9998 events, as per the Curated Lists 
 
 # Examples
 
-## Create Rating Types: 5-star or 0-100
+## Create Rating Types: 5-star, 0-100, or pairwise comparison
 
 ```
 {
@@ -47,6 +47,33 @@ We declare the list of ratings using kind 9998 events, as per the Curated Lists 
     ["description", "For ratings in the category of 5-stars, the rating must be an integer between 0 and 5. Context is optional; if unspecified, context is intended to be something generic."]
   ],
   "id": <id_for_list_of_5star_ratings>
+}
+```
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_rating_types>],
+    ["name", "pairwise comparison"],
+    ["description", "For ratings in the category of pairwise comparison, there are two subjects; the rating is > or =."]
+  ],
+  "id": <id_for_list_of_pairwise_comparison_ratings>
+}
+```
+
+Now rate Alice as a better back end programmer than Bob
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_ratings>],
+    ["ratingType", <id_for_list_of_pairwise_comparison_ratings>],
+    ["subject", "Alice", "Bob"],
+    ["context", <id_for_to_program_action>:<id_for_back_end_programmer_category>],
+    ["rating", ">"]
+  ]
 }
 ```
 
