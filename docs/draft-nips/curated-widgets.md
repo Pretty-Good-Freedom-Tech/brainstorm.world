@@ -10,9 +10,9 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
   "kind": 9998,
   "tags": [
     ["names", "widget", "widgets"],
-    ["description", "lorem ipsum"],
+    ["description", "The p tag indicates the owner of the widget."],
     ["required", "widgetType"],
-    ["required", "owner"]
+    ["required", "p"]
   ],
   "id": <id_for_list_of_widgets>
 }
@@ -27,6 +27,7 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
     ["names", "widget type", "widget types"],
     ["description", "lorem ipsum"],
     ["required","name"],
+    ["optional","title"],
     ["optional","description"]
   ],
   "id": <id_for_list_of_widget_types>
@@ -40,7 +41,8 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
   "kind": 9999,
   "tags": [
     ["z", <id_for_list_of_widget_types>],
-    ["name", "orange widgets"],
+    ["name", "orange widget type"],
+    ["title", "The Orange Widget Type"],
     ["description", "lorem ipsum"]
   ],
   "id": <id_for_the_orange_widget_type>
@@ -52,7 +54,8 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
   "kind": 9999,
   "tags": [
     ["z", <id_for_list_of_widget_types>],
-    ["name", "purple widgets"],
+    ["name", "purple widget type"],
+    ["title", "The Purple Widget Type"],
     ["description", "lorem ipsum"]
   ],
   "id": <id_for_the_purple_widget_type>
@@ -68,7 +71,7 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
     ["z", <id_for_list_of_widgets>],
     ["name", "Alice's purple widget"],
     ["widgetType", <id_for_the_purple_widget_type>],
-    ["owner", <pubkey_Alice>],
+    ["p", <pubkey_Alice>],
   ],
   "id": <id_for_list_of_purple_widgets>
 }
