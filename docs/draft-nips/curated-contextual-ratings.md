@@ -1,4 +1,4 @@
-Curated Ratings
+Curated Contextual Ratings
 =====
 
 `draft`, `optional`
@@ -95,7 +95,7 @@ We declare the list of rating types using a kind 9998 event, as per the Curated 
 
 # Examples of individual Ratings
 
-Rate Alice as a better back end programmer than Bob using the _pairwise comparison_ rating type.
+Rate Alice as a better back end programmer than Bob using the _pairwise comparison_ context type.
 
 ```
 {
@@ -110,7 +110,7 @@ Rate Alice as a better back end programmer than Bob using the _pairwise comparis
 }
 ```
 
-Now rate Panerra as a 4 out of 5 restaurant:
+Now rate Panera as a 4 out of 5 restaurant using the simple context of nutritional food value:
 
 ```
 {
@@ -118,13 +118,14 @@ Now rate Panerra as a 4 out of 5 restaurant:
   "tags": [
     ["z", <id_for_list_of_ratings>],
     ["ratingType", <id_for_list_of_5star_ratings>],
-    ["subject", "Panerra"],
+    ["subject", "Panera"],
+    ["context", <id_for_nutritional_food_value>],
     ["rating", "4"]
   ]
 }
 ```
 
-Now rate Alice as 5 out of 5 stars in her ability to rate dramas
+Now rate Alice as 5 out of 5 stars in her ability to rate dramas. Once again we are using the _pairwise comparison_ context type, using _to rate_ as the action and _dramas_ as the category:
 
 ```
 {
@@ -137,6 +138,3 @@ Now rate Alice as 5 out of 5 stars in her ability to rate dramas
     ["rating", "5"]
   ]
 }
-```
-
-
