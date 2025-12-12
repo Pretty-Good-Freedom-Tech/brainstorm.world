@@ -20,7 +20,8 @@ We declare the list of ratings using a kind 9998 event, as per the Curated Lists
     ["names", "rating", "ratings"],
     ["description", "lorem ipsum"],
     ["required","ratingType"],
-    ["optional","context"]
+    ["optional","context"],
+    ["optional","confidence"]
   ],
   "id": <id_for_list_of_ratings>
 }
