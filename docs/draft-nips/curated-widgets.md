@@ -25,6 +25,8 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
   "kind": 9998,
   "tags": [
     ["names", "widget type", "widget types"],
+    ["titles", "Widget Type", "Widget Types"],
+    ["slugs", "widgetType", "widgetTypes"],
     ["description", "lorem ipsum"],
     ["required","name"],
     ["optional","title"],
