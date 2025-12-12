@@ -1,9 +1,9 @@
-Curated Contexts
+Curated Dual Field Contexts
 =====
 
 This NIP proposes a simple, powerful and versatile method to categorize contexts using two fields: the _action_ field and the _category_ field. 
 
-Each individual Context is composed of one _action_ and one _category_. 
+Each individual Dual Field Context is composed of one _action_ and one _category_. 
 
 Examples of _actions_ are: to review, to write, to direct. Examples of _categories_ are: movies, dramas, comedies. Using different combinations of actions and categories, we are able to convey, for example, that we trust Alice to direct comedies, Bob to write science fiction, and Charlie to review movies.
 
@@ -146,6 +146,4 @@ Categories can be used to classify almost anything: products, services, business
 
 # Declarations of the list of Contexts and list of Context Types
 
-We declare the lists of actions and categories using kind 9998 events, as per the Curated Lists NIP:
-
-(work in progress, NIP incomplete)
+Following the example of Curated Widgets NIP, we can declare the list of Contexts, the list of Context Types, and two Context Types: _simple contexts_ and _dual-field contexts_. We will reserve a separate NIP, the Curated Contexts NIP, to go through this exercise.
