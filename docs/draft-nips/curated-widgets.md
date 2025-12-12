@@ -26,13 +26,14 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
   "tags": [
     ["names", "widget type", "widget types"],
     ["description", "lorem ipsum"],
-    ["required","description"]
+    ["required","name"],
+    ["optional","description"]
   ],
   "id": <id_for_list_of_widget_types>
 }
 ```
 
-# Orange and Purple Widget Types
+# Declaration of the Orange and Purple Widget Types
 
 ```
 {
