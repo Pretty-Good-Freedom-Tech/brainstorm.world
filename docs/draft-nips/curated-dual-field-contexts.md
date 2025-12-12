@@ -138,12 +138,23 @@ Finally, here's how we add that dramas is a subset of movies:
 }
 ```
 
-# Utilization
-
-Contexts play a central role in the Curated Ratings NIP.
-
-Categories can be used to classify almost anything: products, services, businesses, people, ideas, etc. 
-
 # Declarations of the list of Contexts and list of Context Types
 
-Following the example of Curated Widgets NIP, we can declare the list of Contexts, the list of Context Types, and two Context Types: _simple contexts_ and _dual-field contexts_. We will reserve a separate NIP, the Curated Contexts NIP, to go through this exercise.
+Following the example of Curated Widgets NIP, we can declare the list of Contexts, the list of Context Types, and two Context Types: _simple context type_ and _dual-field context type_. We will reserve a separate NIP, the Curated Contexts NIP, to go through this exercise.
+
+# Utilization
+
+## Contexts
+
+Contexts have wide utility but are well illustrated by their role in the Curated Ratings NIP. A simple Context is referenced in the usual manner:
+
+`["context", <id_for_simple_context>],`
+
+Whereas a dual-field context is referenced with a colon between the action and the category:
+
+`["context", <id_for_to_program_action>:<id_for_back_end_programmer_category>],`
+
+## Categories 
+
+Categories can be used independently of dual field contexts to classify things: products, services, businesses, people, ideas, etc. 
+
