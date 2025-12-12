@@ -71,7 +71,7 @@ This NIP illustrates the use of the [Decentralized Lists Custom NIP](https://nos
     ["z", <id_for_list_of_widgets>],
     ["name", "Alice's purple widget"],
     ["widgetType", <id_for_the_purple_widget_type>],
-    ["p", <pubkey_Alice>],
+    ["p", <pubkey_Alice>]
   ],
   "id": <id_for_list_of_purple_widgets>
 }
