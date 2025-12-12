@@ -40,6 +40,8 @@ We declare the list of rating types using a kind 9998 event, as per the Curated 
   "kind": 9998,
   "tags": [
     ["names", "rating type", "rating types"],
+    ["titles", "Rating Type", "Rating Types"],
+    ["slugs", "ratingType", "ratingTypes"],
     ["description", "lorem ipsum"],
     ["required","description"]
   ],
