@@ -146,7 +146,7 @@ Following the example of the [Curated Widgets NIP](https://nostrhub.io/naddr1qvz
 
 Contexts have wide utility but are well illustrated by their role in the [Curated Contextual Ratings NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqxnrw4exzar9vskkxmmww3jhsar4v9kz6unpw35kuemne37t6y). A simple Context is referenced in the usual manner:
 
-`["context", <id_for_simple_context>],`
+`["context", <id_for_some_specific_simple_context>],`
 
 Whereas a dual-field context is referenced with a colon between the action and the category:
 
