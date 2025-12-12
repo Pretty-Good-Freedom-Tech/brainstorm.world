@@ -74,8 +74,6 @@ Do likewise for other categories: _comedies_, _dramas_, etc.
 
 It will be important to maintain hierarchical relationships for Actions and Categories. For example, we will want to make use of the fact that dramas is a subset of movies. Therefore, if our web of trust tells us that Charlie is highly skilled at revieweing movies, we will be able to assume that this skill applies to all subsets of movies, including dramas and comedies.
 
-(section incomplete; need to discuss how to do this. Maybe make a list of relationships, with one relationship called subset; make a list of category relationships; and users can declare dramas as a subset of movies by adding an item to the list of category relationships.)
-
 We first create a list of relationship types:
 
 ```
@@ -140,13 +138,13 @@ Finally, here's how we add that dramas is a subset of movies:
 
 # Declarations of the list of Contexts and list of Context Types
 
-Following the example of Curated Widgets NIP, we can declare the list of Contexts, the list of Context Types, and two Context Types: _simple context type_ and _dual-field context type_. We will reserve a separate NIP, the Curated Contexts NIP, to go through this exercise.
+Following the example of the [Curated Widgets NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqrmrw4exzar9vskhw6tyvajhguclexxk3), we can declare the list of Contexts, the list of Context Types, and two Context Types: _simple context type_ and _dual-field context type_. We will reserve a separate NIP, the Curated Contexts NIP, to go through this exercise.
 
 # Utilization
 
 ## Contexts
 
-Contexts have wide utility but are well illustrated by their role in the Curated Ratings NIP. A simple Context is referenced in the usual manner:
+Contexts have wide utility but are well illustrated by their role in the [Curated Contextual Ratings NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqxnrw4exzar9vskkxmmww3jhsar4v9kz6unpw35kuemne37t6y). A simple Context is referenced in the usual manner:
 
 `["context", <id_for_simple_context>],`
 
