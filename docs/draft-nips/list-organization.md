@@ -1,9 +1,9 @@
-Organization of Decentralized List Items using a Directed Acyclic Graph
+Graphical Organization of Decentralized List Items
 =====
 
 `draft`, `optional`
 
-This NIP augments the [Decentralized Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) with a mechanism to organize list items using a directed acyclic graph.
+This NIP augments the [Decentralized Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) with a mechanism to organize list items using a _directed acyclic graph_.
 
 # Example: Organization of a list of cities
 
