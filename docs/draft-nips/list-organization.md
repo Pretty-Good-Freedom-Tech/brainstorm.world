@@ -80,4 +80,44 @@ Then we create a relationship type called _element_:
 
 We will use the tools declared above to organize a list of cities into the hierarchy depicted in the image.
 
+Declare the list of cities:
+
+```
+```
+
+Declare Nashville as an item on the list of cities:
+
+```
+```
+
+Declare sets of the list of cities:
+
+```
+```
+
+Declare one of the sets of the list of cities:
+
+```
+```
+
+Declare a subset relationship between two of the sets:
+
+```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationships>],
+    ["relationship_type", <id_for_subset>],
+    ["description", "lorem ipsum"],
+    ["nodeFrom", <id_for_set_of_North_American_cities>],
+    ["nodeTo", <id_for_set_of_cities_organized_by_continent>]
+  ]
+}
+```
+
+Declare Nashville an element of the set of North American cities:
+
+```
+```
+
 (NIP under construction.)
