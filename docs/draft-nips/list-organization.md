@@ -9,13 +9,13 @@ This NIP augments the [Decentralized Lists NIP](https://nostrhub.io/naddr1qvzqqq
 
 As an example, we will consider a decentralized list of cities which will be organized by geography and by continent.
 
-![List Items Organized using a DAG](https://i.nostr.build/rrZ7OfeIGndEI73o.png)
+![List Items Organized using a DAG](https://i.nostr.build/eOvLzPBZLYEGaHTV.png)
 
-Figure 1: Green circles represent list items (cities). Grey circles represent _sets_ of list items. Grey arrows indicate that one set is a _subest_ of the other. Green arrows indicate that one list item is an _element_, or a specific instance, or another set.
+Figure 1: Green circles represent list items (cities). Grey circles represent _sets_ of list items. Grey arrows indicate that one set is a _subest_ of the other. Green arrows indicate that one list item is an _element_ of another set.
 
-# Sets, subsets, and specific instances
+# Sets, subsets, and elements
 
-We require two new Lists: a list of _sets_ and a list of _relationship types_. And we will declare two specific types of relationships: _subest_ and _specific instance_. Note that the list of relationship types and the _subest_ relationship type are used to build hierarchies for other NIPs, such as the [Curated Dual Field Contexts NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqxmrw4exzar9vskkgatpdskkv6t9d3jz6cm0de6x27r5wv63qndn). Once these are declared for one purpose, they can and should be reused: _they do not need to be redeclared_.
+We require two new Lists: a list of _sets_ and a list of _relationship types_. And we will declare two specific types of relationships: _subset_ and _element_. Note that the list of relationship types and the _subset_ relationship type are used to build hierarchies for other NIPs, such as the [Curated Dual Field Contexts NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqxmrw4exzar9vskkgatpdskkv6t9d3jz6cm0de6x27r5wv63qndn). Once these are declared for one purpose, they can and should be reused: _they do not need to be redeclared_.
 
 If not already declared by someone else in our community, we declare these lists using kind 9998 events, as per the Decentralized Lists NIP:
 
@@ -59,20 +59,20 @@ Then we create a relationship type called _subset_:
 }
 ```
 
-Then we create a relationship type called _specific instance_:
+Then we create a relationship type called _element_:
 
 ```
 {
   "kind": 9999,
   "tags": [
     ["z", <id_for_list_of_relationship_types>],
-    ["name", "specific instance"],
+    ["name", "element"],
     ["description", "lorem ipsum"],
     ["direction", "forward"],
     ["required", "nodeFrom"],
     ["required", "nodeTo"]
   ],
-  "id": <id_for_specific_instance>
+  "id": <id_for_element>
 }
 ```
 
