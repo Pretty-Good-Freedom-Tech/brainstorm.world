@@ -1,13 +1,15 @@
-Organization of Decentralized List Items into Hierarchies
+Organization of Decentralized List Items using a Directed Acyclic Graph
 =====
 
 `draft`, `optional`
 
 This NIP augments the [Decentralized Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) with a mechanism to organize list items into a hierarchy.
 
-# Example: Organization of a list of cities into a hierarchy
+# Example: Organization of a list of cities
 
-As an example, we will consider a decentralized list of cities which will be organized by country and by geography.
+As an example, we will consider a decentralized list of cities which will be organized by geography and by continent.
+
+![List Items Organized using a DAG](https://i.nostr.build/rrZ7OfeIGndEI73o.png)
 
 # Sets, subsets, and specific instances
 
