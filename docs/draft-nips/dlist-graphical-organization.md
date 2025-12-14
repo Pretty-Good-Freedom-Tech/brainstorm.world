@@ -83,21 +83,55 @@ We will use the tools declared above to organize a list of cities into the hiera
 Declare the list of cities:
 
 ```
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "city", "cities"],
+    ["description", "lorem ipsum"],
+    ["required", "name"]
+  ],
+  "id": <id_for_list_of_cities>
+}
 ```
 
 Declare Nashville as an item on the list of cities:
 
 ```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_cities>],
+    ["name", "Nashville"]
+  ],
+  "id": <id_for_Nashville>
+}
 ```
 
-Declare sets of the list of cities:
+Declare the list of sets of cities:
 
 ```
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "set of cities", "sets of cities"],
+    ["description", "lorem ipsum"],
+    ["required", "name"]
+  ],
+  "id": <id_for_list_of_sets_of_cities>
+}
 ```
 
 Declare one of the sets of the list of cities:
 
 ```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_sets_of_cities>],
+    ["name", "the set of coastal cities"]
+  ],
+  "id": <id_for_the_set_of_coastal_cities>
+}
 ```
 
 Declare a subset relationship between two of the sets:
@@ -108,7 +142,6 @@ Declare a subset relationship between two of the sets:
   "tags": [
     ["z", <id_for_list_of_relationships>],
     ["relationship_type", <id_for_subset>],
-    ["description", "lorem ipsum"],
     ["nodeFrom", <id_for_set_of_North_American_cities>],
     ["nodeTo", <id_for_set_of_cities_organized_by_continent>]
   ]
@@ -118,6 +151,13 @@ Declare a subset relationship between two of the sets:
 Declare Nashville an element of the set of North American cities:
 
 ```
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationships>],
+    ["relationship_type", <id_for_element>],
+    ["nodeFrom", <id_for_Nashville>],
+    ["nodeTo", <id_for_set_of_North_American_cities>]
+  ]
+}
 ```
-
-(NIP under construction.)
