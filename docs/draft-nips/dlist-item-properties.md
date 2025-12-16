@@ -97,3 +97,71 @@ Attach the _breed_ property to the list of _dogs_
   ]
 }
 ```
+
+# Enumeration
+
+In the above example, the list of breed is declared with three allowed values: Irish Setter, Golden Retriever, and poodle. What if we want allowed values to be a list?
+
+Declaration of the list of _dog breeds_:
+
+```json
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "dog breed", "dog breeds"],
+    ["description", "lorem ipsum"],
+    ["required", "name"]
+  ],
+  "id": <id_for_list_of_dog_breeds>
+}
+```
+
+Instead of enumerating alloweed values, we enumerate them using the tag: _list_of_allowed_values_for_name_:
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_properties>],
+    ["type", "string"],
+    ["name", "dog breed"],
+    ["list_of_allowed_values_for_name", <id_for_list_of_dog_breeds>]
+  ],
+  "id": <id_for_dog_breed_property>
+}
+```
+
+This process creates a relationship between two lists in a process known as _horizontal integration_. In the above example, the list of _dog breeds_ is horizonally integrated with the list of _dogs_.
+
+An alternative method of horizontal integration is using a special relationship type: _enumerates_. We eliminate the tag: `["list_of_allowed_values_for_name", <id_for_list_of_dog_breeds>]` and in its place we have the following relationship:
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationships>],
+    ["relationship_type", <id_for_enumerates>],
+    ["description", "lorem ipsum"],
+    ["nodeFrom", <id_for_list_of_dog_breeds>],
+    ["nodeTo", <id_for_dog_breed_property>]
+  ]
+}
+```
+
+# Properties of type: Object
+
+The defining characteristic of an object is that it is itself composed of properties. If property A is of type object, we specify that property B is a property of property A using the relationship:
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_relationships>],
+    ["relationship_type", <id_for_is_a_property_of>],
+    ["description", "lorem ipsum"],
+    ["nodeFrom", <id_for_property_A>],
+    ["nodeTo", <id_for_property_B>]
+  ]
+}
+```
+
