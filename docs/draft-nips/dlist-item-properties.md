@@ -1,4 +1,4 @@
-DList Item Properties
+Decentralized List Item Properties
 =====
 
 We augment the [Decentralized Lists NIP](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qyt8wumn8ghj7un9d3shjtnswf5k6ctv9ehx2aqqzdjx2cm9de68yctvd9ax2epdd35hxarnwrn9hx) with a method to curate the properties that individual list items are expected to have. The list of properties will itself be a decentralized list.
@@ -27,7 +27,7 @@ These two tags, name and breed, are expected to be strings. This method has seve
 
 This NIP addresses these disadvantages through the use of items on the list of _properties_ in place of the kind 9998 _required_ tag. A relationship using the specialized relationship type, _is a property of_, is used to associate specific properties with specific lists.
 
-# The list of p_properties_ and the relationship type: _is a property of_
+# The list of _properties_ and the relationship type: _is a property of_
 
 Declare the list of Properties:
 
@@ -39,7 +39,7 @@ Declare the list of Properties:
     ["description", "type must be one of the standard json types: string, number, boolean, null, object, array."],
     ["required", "name"],
     ["required", "type"],
-    ["optional", "allowed_value"]
+    ["optional", "allowed_value"] // specifies allowed values for the name tag
   ],
   "id": <id_for_list_of_properties>
 }
@@ -47,7 +47,7 @@ Declare the list of Properties:
 
 Create a relationship type called _is a property of_
 
-```
+```json
 {
   "kind": 9999,
   "tags": [
@@ -68,7 +68,7 @@ Suppose the list of _dogs_ is declared with name and breed as the only required 
 
 As alternative to including breed as a required tag, as in the above example, is to declare breed as a property, as in the example below:
 
-```
+```json
 {
   "kind": 9999,
   "tags": [
@@ -79,20 +79,20 @@ As alternative to including breed as a required tag, as in the above example, is
     ["allowed_value", "Golden Retriever"],
     ["allowed_value", "poodle"]
   ],
-  "id": <id_for_breed>
+  "id": <id_for_breed_property>
 }
 ```
 
 Attach the _breed_ property to the list of _dogs_
 
-```
+```json
 {
   "kind": 9999,
   "tags": [
     ["z", <id_for_list_of_relationships>],
     ["relationship_type", <id_for_is_a_property_of>],
     ["description", "lorem ipsum"],
-    ["nodeFrom", <id_for_breed>],
+    ["nodeFrom", <id_for_breed_property>],
     ["nodeTo", <id_for_dogs>]
   ]
 }
@@ -116,7 +116,7 @@ Declaration of the list of _dog breeds_:
 }
 ```
 
-Instead of enumerating alloweed values, we enumerate them using the tag: _list_of_allowed_values_for_name_:
+Instead of enumerating allowed values when delaring the proerty: breed, we enumerate them using the tag: _list_of_allowed_values_for_name_:
 
 ```json
 {
