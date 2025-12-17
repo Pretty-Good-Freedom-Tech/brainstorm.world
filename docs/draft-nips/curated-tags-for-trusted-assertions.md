@@ -1,7 +1,7 @@
 Curated Tags for Trusted Assertions
 =====
 
-The purpose of this NIP is to provide a method for the community to curate the list of _tags_ (like `rank` and `followers` that belong in [NIP-85: Trusted Assertions](https://nostrhub.io/naddr1qvzqqqrcvypzq3svyhng9ld8sv44950j957j9vchdktj7cxumsep9mvvjthc2pjuqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqyn5wf6hxar9vskkzumnv4e8g6t0deesu5l7ne).
+The purpose of this NIP is to provide a method for the community to curate the list of _tags_ (like `rank` and `followers`) that belong in [NIP-85: Trusted Assertions](https://nostrhub.io/naddr1qvzqqqrcvypzq3svyhng9ld8sv44950j957j9vchdktj7cxumsep9mvvjthc2pjuqy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqyn5wf6hxar9vskkzumnv4e8g6t0deesu5l7ne).
 
 These tags will be useful for Service Providers to indicate their support for particular tags and for users to broadcast their desire to use particular tags. In addition, it will help clients to know how to handle tags that they have not seen before.
 - _subject_ tells clients whether a given tag is appropriate to be shown alongside pubkeys or events
