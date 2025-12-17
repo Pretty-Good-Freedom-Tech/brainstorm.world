@@ -59,7 +59,7 @@ We will begin by declaring two items on this list: _rank_ and _followers_.
     ["kind", "30382"],
     ["subject", "user"],
     ["minimum", "0"],
-    ["maximum", "infinite"],
+    ["maximum", ""], // empty or null means uncapped
     ["type", "integer"]
   ],
   "id": <id_for_followers_TA_tag>
