@@ -6,7 +6,7 @@ The purpose of this NIP is to provide a method for the community to curate the l
 These tags will be useful for Service Providers to indicate their support for particular tags and for users to broadcast their desire to use particular tags. In addition, it will help clients to know how to handle tags that they have not seen before:
 - _subject_ tells clients whether a given tag is appropriate to be shown alongside pubkeys or events
 - _minimium_ and _maximum_: useful if a client plans to use a particular metric in some calculation, like a weighted average
-- _description_ can be displayed by the client in the Settings to assist users in selecting, for example, which `subject = pubkey` metrics to display on user profiles
+- _description_ can be displayed by the client in the Settings to assist users in updating their Trusted Assertion Preferences (kind 10040) to select, for example, which `subject = pubkey` metrics to display on user profiles
 
 # Declaration of the List of Tags
 
