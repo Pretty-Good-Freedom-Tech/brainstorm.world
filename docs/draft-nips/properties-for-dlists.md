@@ -165,6 +165,19 @@ The defining characteristic of an object is that it is itself composed of proper
 }
 ```
 
+We expect a property of type: object to be stringified as in the example below.
+
 In the below example, we create a property of type: object called "pedigree" to bundle one boolean and three string properties together:
 
 ![Properties of Dog](https://i.nostr.build/2zXVkw5HiercDAfs.png)
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_dogs>],
+    ["name", "Spot"],
+    ["pedigree", '{ "pureblood": true, "breed": "Irish Setter", "mother": <p-tag_for_spots_mother>, "father": <p-tag_for_spots_father>}']
+  ]
+}
+```
