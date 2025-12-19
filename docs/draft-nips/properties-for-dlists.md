@@ -182,7 +182,7 @@ In the below example, we create a property of type: object called "pedigree" to 
 }
 ```
 
-A property tree can be of arbitrary depth. Effectively, the property tree defines the [JSON Schema](https://json-schema.org/) for an object, which we will refer to as a Kind 9999 Object (K9O). At some point it will make more sense to construct the data as a K9O that validates against this JSON Schema, then stringify the K9O and put that into the `content` field, list this:
+A property tree can be of arbitrary depth. Effectively, the property tree defines the [JSON Schema](https://json-schema.org/) for an object, which we will refer to as a Kind 9999 Object (K9O). At some point it will make more sense to construct the data as a K9O that validates against this JSON Schema, then stringify the K9O and put that into the `content` field, like this:
 
 The Kind 9999 Object for Spot:
 
