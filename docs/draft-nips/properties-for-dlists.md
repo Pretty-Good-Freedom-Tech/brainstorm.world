@@ -182,7 +182,7 @@ In the below example, we create a property of type: object called "pedigree" to 
 }
 ```
 
-A property tree can be of arbitrary depth. Effectively, the property tree defines the JSON Schema for an object, which we will refer to as a Kind 9999 Object (K9O). At some point it will make more sense to construct the data as a K9O that validates against this JSON Schema, then stringify the K9O and put that into the `content` field, list this:
+A property tree can be of arbitrary depth. Effectively, the property tree defines the [JSON Schema](https://json-schema.org/) for an object, which we will refer to as a Kind 9999 Object (K9O). At some point it will make more sense to construct the data as a K9O that validates against this JSON Schema, then stringify the K9O and put that into the `content` field, list this:
 
 The Kind 9999 Object for Spot:
 
@@ -209,3 +209,22 @@ The Kind 9999 Object for Spot:
   "content": <stingified K9O>
 }
 ```
+
+We can declare the list of JSON Schemas, such that there should be a 1-to-1 correspondence between a property tree and a JSON schema. Given a property tree, we can determine the JSON schema, add it to the knowledge graph so that for any given list item, it will be a simple matter to validate any given list item against its corresponding JSON schema(s).
+
+```json
+{
+  "kind": 9998,
+  "tags": [
+    ["names", "JSON schema", "JSON schemas"],
+    ["description", "See json-schema.org"]
+  ],
+  "id": <id_for_list_of_json_schemas>
+}
+```
+
+The corresponding knowledge graph can be organized as follows:
+
+![JSON Schema for Dog](https://i.nostr.build/Orh6WgETmtnqKnBW.png)
+
+Given the above Knowledge Graph, we introduce the notion of a `class thread` as described in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic idea of the class thread.
