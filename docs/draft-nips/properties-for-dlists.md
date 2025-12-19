@@ -165,3 +165,6 @@ The defining characteristic of an object is that it is itself composed of proper
 }
 ```
 
+In the below example, we create a property of type: object called "pedigree" to bundle one boolean and three string properties together:
+
+![Properties of Dog](https://i.nostr.build/2zXVkw5HiercDAfs.png)
