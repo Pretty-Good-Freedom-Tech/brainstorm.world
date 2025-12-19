@@ -181,3 +181,31 @@ In the below example, we create a property of type: object called "pedigree" to 
   ]
 }
 ```
+
+A property tree can be of arbitrary depth. Effectively, the property tree defines the JSON Schema for an object, which we will refer to as a Kind 9999 Object (K9O). At some point it will make more sense to construct the data as a K9O that validates against this JSON Schema, then stringify the K9O and put that into the `content` field, list this:
+
+The Kind 9999 Object for Spot:
+
+```json
+"dogData": { // alternate: <id_for_list_of_dogs>
+  "name": "Spot",
+  "pedigree": {
+    "pureblood": true,
+    "breed": "Irish Setter", // alternate: <id_for_Irish_Setter>
+    "mother": <p-tag_for_spots_mother>,
+    "father": <p-tag_for_spots_father>
+  }
+}
+```
+
+```json
+{
+  "kind": 9999,
+  "tags": [
+    ["z", <id_for_list_of_dogs>],
+    ["name", "Spot"],
+    ["pedigree", '{ "pureblood": true, "breed": "Irish Setter", "mother": <p-tag_for_spots_mother>, "father": <p-tag_for_spots_father>}']
+  ],
+  "content": <stingified K9O>
+}
+```
