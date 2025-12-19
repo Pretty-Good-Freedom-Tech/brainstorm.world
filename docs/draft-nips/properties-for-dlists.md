@@ -169,7 +169,7 @@ We expect a property of type: object to be stringified as in the example below.
 
 In the below example, we create a property of type: object called "pedigree" to bundle one boolean and three string properties together:
 
-![Properties of Dog](https://i.nostr.build/2zXVkw5HiercDAfs.png)
+![Properties of Dog](https://i.nostr.build/U3gWNauEnoylpTDv.png)
 
 ```json
 {
