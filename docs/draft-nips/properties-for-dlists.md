@@ -227,4 +227,6 @@ The corresponding knowledge graph can be organized as follows:
 
 ![JSON Schema for Dog](https://i.nostr.build/Orh6WgETmtnqKnBW.png)
 
-Given the above Knowledge Graph, we introduce the notion of a `class thread` as described in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic idea of the class thread.
+Given the above Knowledge Graph, we introduce the notion of a `class thread` as the specialized path that connects any given list item (kind 9999 event -- the green node in the above figure) to its JSON Schema (the yellow node in the figure). The `Class Thread Principle` is the constraint that within any knowledge graph, for every given class thread, the kind 9999 event at the end of the thread must validate against the JSON Schema at the start of the thread.
+
+These ideas are described in more detail in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic idea.
