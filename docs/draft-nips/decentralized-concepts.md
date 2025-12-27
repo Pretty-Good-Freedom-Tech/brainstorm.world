@@ -96,6 +96,14 @@ A sandbox nostr "Concept Graph Explorer" app might have the following features:
 - a tool to validate list items against the concept's JSON schema
 - a tool to select which WoT to delegate curation of any particular aspect of the concept (as per the above table)
 - a tool to facilitate creation of new concepts
+- ability to upvote and downvote
+- ability to add relationships, create new Set nodes, update properties, etc
+
+## Knowledge Graph Explorer
+
+Similar to the Concept Graph Explorer
+- graphical view: bigger picture that shows concepts and their interconnections (vertical and horizontal integrations, see below) without details of individual concepts
+- ability to add new integrations between concepts
 
 # Knowledge Graphs
 
