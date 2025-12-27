@@ -1,6 +1,6 @@
 Decentralized Concepts
 =====
-a.k.a. Curated Knowledge Graphs
+a.k.a. Decentralized Knowledge Graphs
 -----
 
 A _decentralized concept_ can be viewed as a _decentralized list_ that is imbued with additional structure: organization of list items into a graph, and a property tree which specifies the format of individual list items. These are described in the NIPs listed below. In this NIP, we review the definition of a _concept_, starting with a specialized path called a _class thread_. We then outline how a collection of interconnected concepts results in a _personalized knowledge graph_ (KG) that is curated by one's web of trust (WoT). 
