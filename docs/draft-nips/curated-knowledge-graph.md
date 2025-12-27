@@ -45,9 +45,24 @@ Using Decentralized Lists, we will define the following relationship types:
 
 A concept can be thought of as a decentralized list that is imbued with a property tree and structured into a directed acyclic graph (DAG).
 
-(insert example image of a Concept)
+An individual concept is a collection of nodes and edges and is a subgraph embedded into a curated knowledge graph. Each concept is organized around a _class header_ node. Given an individual class header node, a concept is defined as the set of all nodes and all relationships traversed by the set of all class threads that emanate from the class header node. If a property tree and JSON Schema node are associated with a class header, those nodes and edges are also included within the definition of a concept.
 
-An individual concept is a subset of a CKG. It is a collection of nodes and edges. Each concept is organized around a _class header_ node. Given an individual class header node, a concept is defined as the set of all nodes and all relationships traversed by the set of all class threads that emanate from the class header node. If a property tree and JSON Schema node are associated with a class header, those nodes and edges are also included within the definition of a concept.
+Consider the following example of the concept of a dog:
+
+![An example of a Concept](https://i.nostr.build/3yanWOOkEv9nglnj.png)
+
+In the above figure, the blue node, representing the kind 9998 list header for the list of Dogs, is the _class header_ node. 
+
+## Class Threads
+
+The blue class header node has a single class thread emanating from it, traversing the nodes for the set of all dogs, the set of Irish Setters, and Spot.
+
+A class thread is a specialized directed path through a graph. It is defined in terms of three relationship types:
+- CLASS_THREAD_INITIATION, a.k.a. SUPERSET
+- CLASS_THREAD_PROPAGATION, a.k.a. SUBSET
+- CLASS_THREAD_TERMINATION, a.k.a. ELEMENT
+
+Each class thread starts with a single CLASS_THREAD_INITIATION edge and a single CLASS_THREAD_TERMINATION edge. In between, there can be any number of CLASS_THREAD_PROPAGATION edges, from none to any positive integer.
 
 (This NIP is a work in progress)
 
