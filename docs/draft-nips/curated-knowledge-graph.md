@@ -3,7 +3,7 @@ Curated Knowledge Graphs
 
 This NIP describes a mechanism to construct a _personalized knowledge graph_ (KG) that is curated by one's web of trust (WoT).
 
-The WoT curates not only the data inside the CKG, but also the organization of that data into functional units referred to as _concepts_. Much of this NIP is concerned with the formal definition of a concept, starting with a specialized path called a _class thread_.
+The WoT curates not only the data inside the CKG, but also the organization of that data into functional units referred to as _concepts_. Most of this NIP is concerned with the formal definition of a concept, starting with a specialized path called a _class thread_.
 
 # Building Blocks and Primitives
 
