@@ -58,9 +58,9 @@ In the above figure, the blue node, representing the kind 9998 list header for t
 The blue class header node has a single class thread emanating from it, traversing the nodes for the set of all dogs, the set of Irish Setters, and Spot.
 
 A class thread is a specialized directed path through a graph. It is defined in terms of three relationship types:
-- CLASS_THREAD_INITIATION, a.k.a. SUPERSET
-- CLASS_THREAD_PROPAGATION, a.k.a. SUBSET
-- CLASS_THREAD_TERMINATION, a.k.a. ELEMENT
+- CLASS_THREAD_INITIATION, a.k.a. IS_THE_CONCEPT_FOR
+- CLASS_THREAD_PROPAGATION, a.k.a. IS_A_SUPERSET_OF
+- CLASS_THREAD_TERMINATION, a.k.a. HAS_ELEMENT
 
 Each class thread starts with a single CLASS_THREAD_INITIATION edge and a single CLASS_THREAD_TERMINATION edge. In between, there can be any number of CLASS_THREAD_PROPAGATION edges, from none to any positive integer.
 
