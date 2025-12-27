@@ -42,6 +42,8 @@ Using Decentralized Lists, we will define the following relationship types as _p
 - IS_A_PROPERTY_OF
 - IS_THE_JSON_SCHEMA_FOR
 
+The list of relationships should have a field for the relationship type as well as a field for each of the two nodes being connected.
+
 # Concepts
 
 A concept can be thought of as a decentralized list that is imbued with a property tree and structured into a directed acyclic graph (DAG).
@@ -85,12 +87,15 @@ In this table, a "web of trust (WoT)" simply means any list of nostr users that 
 
 A sandbox nostr "Concept Graph Explorer" app might have the following features:
 - The list of available concepts is the list of all kind 9998 events from which at least one class thread emanates.
-- The app would require specification of the event id or naddr of the kind 9999 event for each one of the prerequisite relationship types discussed above (CLASS_THREAD_INITIATION, CLASS_THREAD_PROPAGATION, CLASS_THREAD_TERMINATION, etc). Optionally, the settings app could allow the end user to update these selections.
+- The app would require specification of the event id or naddr of the following (with the ability to update in settings):
+  - the kind 9999 event for each one of the prerequisite relationship types discussed above (CLASS_THREAD_INITIATION, CLASS_THREAD_PROPAGATION, CLASS_THREAD_TERMINATION, etc).
+  - the lists of relationships and relationship types
 - Visualization of the Concept as a pair of graphs (the property tree graph and the organization of list items into a DAG)
 - a tool to generate the JSON schema automatically from the property tree
 - a tool to generate a property tree automatically given a JSON schema (low priority feature)
 - a tool to validate list items against the concept's JSON schema
 - a tool to select which WoT to delegate curation of any particular aspect of the concept (as per the above table)
+- a tool to facilitate creation of new concepts
 
 # External References
 
