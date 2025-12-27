@@ -34,12 +34,13 @@ Each node belongs to one or more node types (which in neo4j are called labels). 
 
 ## Relationships
 
-Using Decentralized Lists, we will define the following relationship types:
-- CLASS_THREAD_INITIATION, a.k.a. SUPERSET
-- CLASS_THREAD_PROPAGATION, a.k.a. SUBSET
-- CLASS_THREAD_TERMINATION, a.k.a. ELEMENT
+Using Decentralized Lists, we will define the following relationship types as _prerequisites_ for construction of a concept:
+- CLASS_THREAD_INITIATION, a.k.a. IS_THE_CONCEPT_FOR
+- CLASS_THREAD_PROPAGATION, a.k.a. IS_A_SUPERSET_OF
+- CLASS_THREAD_TERMINATION, a.k.a. HAS_ELEMENT
 - ENUMERATES
 - IS_A_PROPERTY_OF
+- IS_THE_JSON_SCHEMA_FOR
 
 # Concepts
 
@@ -64,7 +65,32 @@ A class thread is a specialized directed path through a graph. It is defined in 
 
 Each class thread starts with a single CLASS_THREAD_INITIATION edge and a single CLASS_THREAD_TERMINATION edge. In between, there can be any number of CLASS_THREAD_PROPAGATION edges, from none to any positive integer.
 
-(This NIP is a work in progress)
+## Curation of a Concept by WoT
+
+The fundamental building block of a Concept is the Decentralized List. Therefore, curation of a Concept is achieved via curation of each list individually. The same WoT may be used to curate all details of a given concept. However, it is also possible, and probably often desirable, to delegate different lists to different WoTs. Consider, for example, curation of the concept of musicians:
+
+|**List(s)** | **web of trust (WoT)** |
+|---|---|
+| organization of musicians into a DAG | curated list of ontology experts |
+| musical moods | OpenMike |
+| musical genres | Bob |
+| jazz musicians | jazz experts |
+| bluegrass musicians | owner (me) |
+| rock and roll musicians | my follows |
+| rock and roll musicians | my Grapevine (`rank` score over 10) |
+
+In this table, a "web of trust (WoT)" simply means any list of nostr users that the CKG owner entrusts with the delegation of any given list.
+
+## Concept Graph Explorer
+
+A sandbox nostr "Concept Graph Explorer" app might have the following features:
+- The list of available concepts is the list of all kind 9998 events from which at least one class thread emanates.
+- The app would require specification of the event id or naddr of the kind 9999 event for each one of the prerequisite relationship types discussed above (CLASS_THREAD_INITIATION, CLASS_THREAD_PROPAGATION, CLASS_THREAD_TERMINATION, etc). Optionally, the settings app could allow the end user to update these selections.
+- Visualization of the Concept as a pair of graphs (the property tree graph and the organization of list items into a DAG)
+- a tool to generate the JSON schema automatically from the property tree
+- a tool to generate a property tree automatically given a JSON schema (low priority feature)
+- a tool to validate list items against the concept's JSON schema
+- a tool to select which WoT to delegate curation of any particular aspect of the concept (as per the above table)
 
 # External References
 
