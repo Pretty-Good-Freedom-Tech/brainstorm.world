@@ -49,7 +49,7 @@ An individual concept is a collection of nodes and edges and is a subgraph embed
 
 Consider the following example of the concept of a dog:
 
-![An example of a Concept](https://i.nostr.build/3yanWOOkEv9nglnj.png)
+![An example of a Concept](https://i.nostr.build/KdQtV0XsX4nThYt0.png)
 
 In the above figure, the blue node, representing the kind 9998 list header for the list of Dogs, is the _class header_ node. 
 
