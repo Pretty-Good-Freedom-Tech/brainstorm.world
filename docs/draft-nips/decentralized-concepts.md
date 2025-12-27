@@ -1,9 +1,9 @@
-Curated Knowledge Graphs
+Decentralized Concepts
 =====
+a.k.a. Curated Knowledge Graphs
+-----
 
-This NIP describes a mechanism to construct a _personalized knowledge graph_ (KG) that is curated by one's web of trust (WoT).
-
-The WoT curates not only the data inside the CKG, but also the organization of that data into functional units referred to as _concepts_. Most of this NIP is concerned with the formal definition of a concept, starting with a specialized path called a _class thread_.
+A _decentralized concept_ can be viewed as a _decentralized list_ that is imbued with additional structure: organization of list items into a graph, and a property tree which specifies the format of individual list items. These are described in the NIPs listed below. In this NIP, we review the definition of a _concept_, starting with a specialized path called a _class thread_. We then outline how a collection of interconnected concepts results in a _personalized knowledge graph_ (KG) that is curated by one's web of trust (WoT). 
 
 # Building Blocks and Primitives
 
@@ -96,6 +96,20 @@ A sandbox nostr "Concept Graph Explorer" app might have the following features:
 - a tool to validate list items against the concept's JSON schema
 - a tool to select which WoT to delegate curation of any particular aspect of the concept (as per the above table)
 - a tool to facilitate creation of new concepts
+
+# Knowledge Graphs
+
+A collection of interconnected concepts into a single graph database defines a _Curated Knowledge Graph_.
+
+Concepts can be interconnected using two methods: _vertical integration_ and _horizontal integration_.
+
+## Vertical integration
+
+This NIP is incomplete. For now, see [this article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph).
+
+## Horizontal integration
+
+This NIP is incomplete. For now, see [this article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph).
 
 # External References
 
