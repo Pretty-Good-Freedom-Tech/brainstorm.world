@@ -48,3 +48,5 @@ A concept can be thought of as a decentralized list that is imbued with a proper
 (insert example image of a Concept)
 
 An individual concept is a subset of a CKG. It is a collection of nodes and edges. Each concept is organized around a _class header_ node. Given an individual class header node, a concept is defined as the set of all nodes and all relationships traversed by the set of all class threads that emanate from the class header node. If a property tree and JSON Schema node are associated with a class header, those nodes and edges are also included within the definition of a concept.
+
+(This NIP is a work in progress)
