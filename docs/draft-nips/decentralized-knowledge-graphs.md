@@ -21,10 +21,13 @@ Brainstorm Knowledge Graph can be divided into two sets: core knowledge, which i
 
 Prime example of core knowledge: the class thread rule. This requires us to pre-program basic concepts including nodes, node types, relationships, relationship types, and paths, with CLASS_THREAD_INITIATION, CLASS_THREAD_PROPAGATION, and CLASS_THREAD_TERMINATION being elements of the concept of relationship types.
 
-Unlike the knowledge graphs of symbolic AI such as Cyc, the number of pieces of knowledge that must be added manually by scientists, ontologists, grad students, etc is quite limited. Cyc accumulated 25 million pieces of knowledge (need reference) via manual curation, at great expense, with no practical or theoretical threshold when this process of manual knowledge accumulation would ever be complete.
+Unlike the knowledge graphs of symbolic AI such as Cyc, the number of pieces of knowledge that must be added manually by scientists, ontologists, grad students, etc is quite limited. Cyc accumulated 25 million pieces of knowledge (need reference) via manual curation, at great expense, with no practical or theoretical threshold when the laborious and expensive process of manual knowledge accumulation would ever be complete.
 
-Brainstorm, on the other hand, requires a very limited amount of knowledge before it becomes functional. This is because Brainstorm is designed to learn from its trusted network of peers. In this way, Brainstorm solves the _knowledge acquisition bottleneck_ that has (up until now) plagued the symbolic AI program.
+Brainstorm, on the other hand, requires a very limited amount of core knowledge before it becomes functional. This is because Brainstorm is designed to learn from its trusted network of peers. In this way, Brainstorm solves the _knowledge acquisition bottleneck_ that has (up until now) plagued the symbolic AI program.
+
+## WoT-derived knowledge
+
+The technique of [Decentralized Curation of a List](https://github.com/Pretty-Good-Freedom-Tech/brainstorm.world/blob/main/docs/draft-nips/decentralized-list-curation.md) enables Brainstorm to acquire new knowledge from its trusted network of peers. This NIP, therefore, should be part of the Core Knowledge built into Brainstorm.
 
 (This NIP is a work in progress.)
 
-## WoT-derived knowledge
