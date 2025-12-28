@@ -11,7 +11,7 @@ This NIP expands upon the following NIPs:
 
 # Concepts: Vertical and Horizontal Integration
 
-(import description from decentralized concepts NIP)
+(may transfer or duplicate text from the decentralized concepts NIP to here)
 
 # Knowledge Graph Structure
 
