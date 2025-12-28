@@ -34,4 +34,4 @@ Consider, for example, curation of the concept of musicians:
 | rock and roll musicians | my follows |
 | rock and roll musicians | my Grapevine (`rank` score over 10) |
 
-In this table, a "web of trust (WoT)" simply means any list of nostr users that the CKG owner entrusts with the delegation of any given list.
+(this NIP is in progress)
