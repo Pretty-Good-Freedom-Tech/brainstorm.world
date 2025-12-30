@@ -1,0 +1,157 @@
+Trusted Interpretations
+=====
+a.k.a. Trusted Ratings, Trusted Interpreted Ratings (TIR)
+-----
+
+This NIP outlines a method for a WoT Service Provider to _interpret_ raw data, such as NIP-25 kind 7 "=" and "-" reactions, and output ratings as kind 39999 (or 9999) events for consumption elsewhere. Most typically, TIRs are consumed by other SPs which input TIRs and weights (in the form of Trusted Assertions or Trusted Lists) into new Trusted Assertions and/or Trusted Lists.
+
+The notion of _interpretation_ is central to the GrapeRank algorithm. However, the interpretation of raw data is distinct from the GrapeRank algorithm itself, the essence of which is the reliance upon decentralized trust metrics as _weights_ for the calculation of _weighted sums_ and/or _weighted averages_.
+
+# Spitballing
+
+(need to clean up this section)
+
+In general: GrapeRank is a weighted average. Which means it needs a source of Ratings and a source of Weights.
+1. Weights: currently, in Vinney's WoT Sandbox, weights come from a Trusted List. This should work well as standard default behavior.
+2. Ratings: currently, the Sandbox gathers the relevant kind 7 events and interprets them. But this is not easy to generalize. What if the user wants to use something other than kind 7? I propose that we need to create an Interpretation NIP. The idea would be that a WoT SP ingests raw data, kind 7 events in this case, and outputs GrapeRank Ratings as a list, which the Sandbox can then ingest. We could call the NIP: Trusted Ratings. Or maybe Trusted Interpretations. Trusted Assertions, Trusted Lists, Trusted Interpreted Ratings -- the Trusted means it's data that's been processed by a WoT SP. The question would be: what is the format of a Trusted Interpreted Ratings List? 
+
+How about we make a Decentralized List for Trusted Interpreted Ratings and turn it into a Concept:
+
+- List of Trusted Interpreted Ratings (superset)
+  - organize by number of raters and ratees per event
+    - List of Trusted Interpreted Ratings (one rater per event)
+    - List of Trusted Interpreted Ratings (one ratee per event)
+    - List of Trusted Interpreted Ratings (multiple raters, multiple ratees per event)
+  - organize by algorithm:
+    - unspecified
+    - Algorithm A
+    - Algorithm B
+    - GrapeRank
+
+# Construction
+
+We will use the Decentralized Lists NIP as the fundamental building block for this NIP.
+
+## Trusted Interpretations: List Header
+
+```json
+{
+    "kind": 39998,
+    "tags": [
+        ["names", "trusted interpretation", "trusted interpretations"],
+        ["titles", "Trusted Interpretation", "Trusted Interpretations"],
+        ["slugs", "trusted_interpretation", "trusted_interpretations"],
+        ["description", "foo"]
+    ]
+}
+```
+
+## Trusted Interpretations: List Items
+
+### p, q, c tags
+
+Required: 
+- if an event has one rater, then must use the p-tag.
+- if an event has one ratee, then must indicate this with the q-tag.
+- If an event has one context, then must indicate this with the c-tag.
+Optional: if an event has multiple raters, can use multiple p-tags; if multiple ratees, can use multiple q-tags; if multiple contexts, can use multiple c-tags.
+
+## Trusted Interpretations: Organization into a Structured List (a DAG)
+
+## Generic
+
+```json
+{
+    "author": "<pubkey of WoT SP>",
+    "tags": [
+        ["z", "<naddr for List of Trusted Interpreted Ratings>"],
+        ["d", "<UUID>"],
+        ["p", "<pubkey_rater>"], // 0 or more
+        ["q", "<uuid_ratee>"], // 0 or more
+        ["r", "<pubkey_rater>", "<uuid_ratee>", "<score>"] // Here, score is a number. context is inferred from the D tag.
+    ],
+    "kind": 39999
+}
+```
+
+ALTERNATIVELY: `["r", "<interpreted rating>"]` where `<interpreted rating>` is stringified JSON, like this:
+
+```json
+{
+  "rater": "<pubkey_rater>",
+  "ratee": "<uuid_ratee>",
+  "context": "<context>",
+  "score": foo,
+  "confidence": bar
+}
+```
+
+## One rater per event:
+
+```json
+{
+    "author": "<pubkey of WoT SP>",
+    "tags": [
+        ["z", "<naddr for List of Trusted Interpreted Ratings: one rater per event>"],
+        ["p", "<pubkey_rater>"],
+        ["d", "<UUID>"],
+        ["<uuid_ratee>", "<score>"],
+    ],
+    "kind": 39999
+}
+```
+
+For GrapeRank, we either equate <score> as be the stringified version of:
+
+```json
+{
+    "score": <foo>,
+    "confidence": <bar>
+}
+```
+
+Or we replace `["<ratee>", "<score>"],` with `["<ratee>", <score>, <confidence>],`
+
+## One ratee per event:
+
+```json
+{
+    "author": "<pubkey of WoT SP>",
+    "tags": [
+        ["z", "<naddr for List of Trusted Interpreted Ratings: one ratee per event>"],
+        ["q", "<uuid_ratee>"], // use q-tag since ratee could be pubkey, event id, naddr, or tag (maybe use i tag?)
+        ["d", "<UUID>"],
+        ["<pubkey_rater>", "<score>"],
+    ],
+    "kind": 39999
+}
+```
+
+## Multiple raters, multiple ratees per event
+
+```json
+{
+    "author": "<pubkey of WoT SP>",
+    "tags": [
+        ["z", "<naddr for List of Trusted Interpreted Ratings: multiple raters, multiple ratees per event>"],
+        ["d", "<UUID>"],
+        ["<pubkey_rater>", "<uuid_ratee>", <score>],
+    ],
+    "kind": 39999
+}
+```
+
+## Multiple raters, multiple ratees per event AND Algorithm A
+
+```json
+{
+    "author": "<pubkey of WoT SP>",
+    "tags": [
+        ["z", "<naddr for List of Trusted Interpreted Ratings: multiple raters, multiple ratees per event>"],
+        ["z", "<naddr for List of Trusted Interpreted Ratings: Algorithm A>"],
+        ["d", "<UUID>"],
+        ["<pubkey_rater>", "<uuid_ratee>", <score>],
+    ],
+    "kind": 39999
+}
+```
