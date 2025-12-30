@@ -54,6 +54,7 @@ Required:
 - if an event has one rater, then must use the p-tag.
 - if an event has one ratee, then must indicate this with the q-tag.
 - If an event has one context, then must indicate this with the c-tag.
+
 Optional: if an event has multiple raters, can use multiple p-tags; if multiple ratees, can use multiple q-tags; if multiple contexts, can use multiple c-tags.
 
 ## Trusted Interpretations: Organization into a Structured List (a DAG)
