@@ -21,7 +21,8 @@ How about we make a Decentralized List for Trusted Interpreted Ratings and turn 
   - organize by number of raters and ratees per event
     - List of Trusted Interpreted Ratings (one rater per event)
     - List of Trusted Interpreted Ratings (one ratee per event)
-    - List of Trusted Interpreted Ratings (multiple raters, multiple ratees per event)
+    - List of Trusted Interpreted Ratings (one context per event)
+    - List of Trusted Interpreted Ratings (multiple raters, multiple ratees, multiple contexts per event)
   - organize by algorithm:
     - unspecified
     - Algorithm A
