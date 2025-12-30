@@ -81,7 +81,29 @@ Optional:
 
 ### `r` tag
 
+Not sure yet how to structure the `r` tag.
+
 The `r` tag indicates an individual rating, and a Trusted Interpretation event must have at least one `r` tag.
+
+OPTION 1: `["r", "<interpreted rating>"]` where `<interpreted rating>` is stringified JSON , like this:
+
+```json
+{
+  "rater": "<pubkey_rater>", // required
+  "ratee": "<uuid_ratee>", // required
+  "context": "<context>", // optional
+  "score": foo, // required
+  "confidence": bar // optional
+}
+```
+
+OPTION 2: `["r", "<pubkey_rater>", "<uuid_ratee>", "<score>"]` Here, score is a number. context is inferred from the `d` tag.
+
+### `d` tag
+
+The `d` tag is used for kind 39999 events but not kind 9999 events. Depending on which subset, the `d`-tag may want to specify the rater, ratee, and/or context, e.g.:
+
+`["d", "<pubkey_rater>:<uuid_ratee>:<context>"]`
 
 ## Trusted Interpretations: Organization into a Structured List (a DAG)
 
@@ -99,18 +121,6 @@ The `r` tag indicates an individual rating, and a Trusted Interpretation event m
         ["r", "<pubkey_rater>", "<uuid_ratee>", "<score>"] // Here, score is a number. context is inferred from the D tag.
     ],
     "kind": 39999
-}
-```
-
-ALTERNATIVELY: `["r", "<interpreted rating>"]` where `<interpreted rating>` is stringified JSON, like this:
-
-```json
-{
-  "rater": "<pubkey_rater>",
-  "ratee": "<uuid_ratee>",
-  "context": "<context>",
-  "score": foo,
-  "confidence": bar
 }
 ```
 
