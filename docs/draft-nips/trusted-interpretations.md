@@ -42,6 +42,7 @@ We will use the Decentralized Lists NIP as the fundamental building block for th
         ["titles", "Trusted Interpretation", "Trusted Interpretations"],
         ["slugs", "trusted_interpretation", "trusted_interpretations"],
         ["description", "foo"],
+        ["required", "r"],
         ["optional", "p"],
         ["optional", "q"],
         ["optional", "c"]
