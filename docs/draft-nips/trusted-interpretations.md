@@ -69,6 +69,7 @@ Optional: if an event has multiple raters, can use multiple p-tags; if multiple 
         ["d", "<UUID>"],
         ["p", "<pubkey_rater>"], // 0 or more
         ["q", "<uuid_ratee>"], // 0 or more
+        ["c", "<context>"], // 0 or more
         ["r", "<pubkey_rater>", "<uuid_ratee>", "<score>"] // Here, score is a number. context is inferred from the D tag.
     ],
     "kind": 39999
