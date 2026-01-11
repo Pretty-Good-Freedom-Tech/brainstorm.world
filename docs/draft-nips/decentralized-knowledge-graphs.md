@@ -1,2 +1,0 @@
-Decentralized Knowledge Graphs
-=====
