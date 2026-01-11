@@ -9,6 +9,38 @@ This NIP expands upon the following NIPs:
 - [Properties for Decentralized Lists](https://nostrhub.io/naddr1qvzqqqrcvypzpef89h53f0fsza2ugwdc3e54nfpun5nxfqclpy79r6w8nxsk5yp0qy28wumn8ghj7un9d3shjtnyv9kh2uewd9hsqgnswfhhqetjw35k2uedvehhyttyv43k2mn5wfskc6t6v4jz6mrfwd68xy0e5q2): how to manage expected properties of list items, i.e. that _breed_ is a required data field on the list of _dogs_ (managed by WoT)
 - Decentralized Concepts
 
+# Curated Knowledge Graphs: Organizational Principles
+
+Any given CKG is said to be personalized to an _owner_, identified by a nostr npub or pubkey.
+
+A Knowledge Graph is a _graph database_ -- a collection of _nodes_ connected by _edges_, as defined and implemented by open source graph databases such as [neo4j](https://github.com/neo4j) -- organized according to a set of rules. We consider two sets of rules:
+1. _WoT-independent_: a small set of core principles that are immutable (not subject to the WoT), the most important of which is the _class thread principle_.
+2. _WoT-dependent_: Organization of data into _concepts_. The list of concepts within a KG, as well as the structure of any given concept, can in principle be determined in full by one's WoT, although in practice the _owner_ will likely want to take over curation of at least some aspects of the KG.
+
+## Nodes
+
+Each node belongs to one or more node types (which in neo4j are called labels). Using Decentralized Lists, we will define the following node types:
+- NostrEvent
+- NostrUser
+- NostrRelay
+- NostrEventTag
+- TrustedList
+- Set
+- JSONSchema
+- Property
+
+## Relationships
+
+Using Decentralized Lists, we will define the following relationship types as _prerequisites_ for construction of a concept:
+- CLASS_THREAD_INITIATION, a.k.a. IS_THE_CONCEPT_FOR
+- CLASS_THREAD_PROPAGATION, a.k.a. IS_A_SUPERSET_OF
+- CLASS_THREAD_TERMINATION, a.k.a. HAS_ELEMENT
+- ENUMERATES
+- IS_A_PROPERTY_OF
+- IS_THE_JSON_SCHEMA_FOR
+
+The list of relationships should have a field for the relationship type as well as a field for each of the two nodes being connected.
+
 # Concepts: Vertical and Horizontal Integration
 
 (may transfer or duplicate text from the decentralized concepts NIP to here)
