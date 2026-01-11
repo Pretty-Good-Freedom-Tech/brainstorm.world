@@ -65,31 +65,9 @@ A sandbox nostr "Concept Graph Explorer" app might have the following features:
 - ability to upvote and downvote
 - ability to add relationships, create new Set nodes, update properties, etc
 
-## Knowledge Graph Explorer
-
-Similar to the Concept Graph Explorer
-- graphical view: bigger picture that shows concepts and their interconnections (vertical and horizontal integrations, see below) without details of individual concepts
-- ability to add new integrations between concepts
-
-# Knowledge Graphs
-
-A collection of interconnected concepts into a single graph database defines a _Curated Knowledge Graph_.
-
-Concepts can be interconnected using two methods: _vertical integration_ and _horizontal integration_. Both types of interconnections are reliant upon specialized relationship types and are illustrated in this example:
-
-![Integration of Concepts](https://i.nostr.build/7RkIiv0ecseq8n49.png)
-
-## Vertical integration
-
-Two types of vertical integration, each reliant on a specialized relationship type:
-1. _IS_A_SUPERSET_OF_, e.g. _The Superset of Dogs_ is a superset of _The Superset of Irish Setters_
-2. _HAS_ELEMENT_, e.g. _The Superset of Dog Breeds_ has element: _Irish Setter_
-
-## Horizontal integration
-
-Horizontal integration is based on the ENUMERATES relationship. Example: _The Superset of Dog Breeds_ enumerates the _Breed Property_ of the concept: _Dog_.
-
 # External References
 
 These ideas are described in more detail in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic ideas behind class threads and concepts.
+
+(This NIP is a work in progress.)
 
