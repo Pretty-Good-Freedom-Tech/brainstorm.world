@@ -61,5 +61,27 @@ Brainstorm, on the other hand, requires a very limited amount of core knowledge 
 
 The technique of [Decentralized Curation of a List](https://github.com/Pretty-Good-Freedom-Tech/brainstorm.world/blob/main/docs/draft-nips/decentralized-list-curation.md) enables Brainstorm to acquire new knowledge from its trusted network of peers. This NIP, therefore, should be part of the Core Knowledge built into Brainstorm.
 
+# Knowledge Graphs
+
+A collection of interconnected concepts into a single graph database defines a _Curated Knowledge Graph_.
+
+Concepts can be interconnected using two methods: _vertical integration_ and _horizontal integration_. Both types of interconnections are reliant upon specialized relationship types and are illustrated in this example:
+
+![Integration of Concepts](https://i.nostr.build/7RkIiv0ecseq8n49.png)
+
+## Vertical integration
+
+Two types of vertical integration, each reliant on a specialized relationship type:
+1. _IS_A_SUPERSET_OF_, e.g. _The Superset of Dogs_ is a superset of _The Superset of Irish Setters_
+2. _HAS_ELEMENT_, e.g. _The Superset of Dog Breeds_ has element: _Irish Setter_
+
+## Horizontal integration
+
+Horizontal integration is based on the ENUMERATES relationship. Example: _The Superset of Dog Breeds_ enumerates the _Breed Property_ of the concept: _Dog_.
+
+# External References
+
+These ideas are described in more detail in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic ideas behind class threads and concepts.
+
 (This NIP is a work in progress.)
 
