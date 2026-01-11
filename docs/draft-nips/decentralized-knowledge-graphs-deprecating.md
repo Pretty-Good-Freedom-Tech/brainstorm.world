@@ -79,6 +79,12 @@ Two types of vertical integration, each reliant on a specialized relationship ty
 
 Horizontal integration is based on the ENUMERATES relationship. Example: _The Superset of Dog Breeds_ enumerates the _Breed Property_ of the concept: _Dog_.
 
+## Knowledge Graph Explorer
+
+Similar to the Concept Graph Explorer
+- graphical view: bigger picture that shows concepts and their interconnections (vertical and horizontal integrations, see below) without details of individual concepts
+- ability to add new integrations between concepts
+
 # External References
 
 These ideas are described in more detail in [this article](https://prettygoodproject.substack.com/p/for-web-of-trust-to-succeed-it-must), [this article](https://prettygoodproject.substack.com/p/the-tapestry-model) and [this other article](https://prettygoodproject.substack.com/p/short-pitch-for-the-concept-graph). All 3 of these articles are somewhat out of date, but get across the basic ideas behind class threads and concepts.
